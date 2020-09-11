@@ -1,0 +1,54 @@
+.footer {
+    height: 250px;
+    background-color: #173071;
+    width: 100%;
+    color: #FFF;
+}
+
+.ant-layout-footer {
+    padding: 0;
+}
+
+.foot-logo {
+    display: block;
+    color: #FFF;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.copyright {
+    text-align: center;
+    display: block;
+    font-size: 4px;
+    margin-top: 100px;
+    /* border: 1px solid red; */
+}
+
+.yellow {
+    display: block;
+    width: 37px;
+    height: 6px;
+    margin-top: 60px;
+    background-color: #F6B437;
+}
+
+.foot-to-top {
+    margin-top: 10px;
+}
+
+.foot-to-top-center {
+    margin-top: 20px;
+}
+
+.QRcode {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+}
+
+.padding-left {
+    padding-left: 10px;
+}

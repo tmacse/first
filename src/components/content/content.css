@@ -1,0 +1,227 @@
+.container {
+  margin: 30px auto 0 auto;
+  width: 1200px;
+}
+
+a.ant-typography,
+.ant-typography a {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/* a:hover {
+    color: #D0151C;
+} */
+
+/* a:visited {
+    color: yellow;
+} */
+
+.nav {
+  height: 300px;
+}
+
+.video {
+  width: 700px;
+  height: 300px;
+  padding-top: 43.1%;
+}
+
+.video-detail {
+  height: 450px;
+  width: 800px;
+  background-color: #f5f8f8;
+  /* border: 10px solid blue; */
+}
+
+.video-recommend {
+  /* border: 1px solid red; */
+  height: 450px;
+  /* background-color: #444444; */
+}
+
+.junwang {
+  border-left-width: 5px;
+  border-left-color: #173071;
+  border-left-style: solid;
+  height: 18px;
+  line-height: 18px;
+}
+
+.ant-card-body {
+  padding: 8px;
+}
+
+.ant-divider {
+  border-top: 1px solid #173071;
+}
+
+.ant-divider-horizontal {
+  margin: 10px 0;
+}
+
+.qj-level {
+  margin-top: 16px;
+  /* height: 350px; */
+  min-height: 300px;
+}
+
+.tangle {
+  width: 1200px;
+  height: 45px;
+  background-color: #1968b3;
+  font-size: 32px;
+  line-height: 45px;
+  font-weight: bold;
+  color: white;
+}
+
+.hoverable {
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.tangle span {
+  display: block;
+  text-align: center;
+}
+
+.mini-tangle {
+  /* margin: 0 8px; */
+  border: 1px solid red;
+  width: 280px;
+  height: 24px;
+  border-left-width: 280px;
+  border-left-color: #1968b3;
+  /* background-color: #1968B3; */
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.ant-card-head {
+  text-align: center;
+  background-color: #1968b3;
+  min-height: 28px;
+  height: 28px;
+  line-height: 28px;
+  color: white;
+}
+
+.ant-card-head-title {
+  padding: 0;
+}
+
+.ant-list-sm .ant-list-item {
+  padding: 0;
+}
+
+.ant-list-bordered.ant-list-sm .ant-list-item {
+  /* padding: 6px 18px; */
+  /* border: 0; */
+}
+
+.my-card {
+  height: 280px;
+}
+
+/* 重写card边框设置 */
+.ant-list-bordered {
+  border: 0;
+}
+
+.movie-card {
+  height: 500px;
+}
+
+.mail-text {
+  padding-left: 10px;
+}
+
+.station-master-mail {
+  background-color: #1bbbef;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font: bold;
+  color: white;
+  margin-top: 10px;
+  font-size: larger;
+}
+
+.commissioner-mail {
+  background-color: #1d6ab4;
+  /* width: 300px; */
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font: bold;
+  color: white;
+  margin-top: 10px;
+  font-size: larger;
+}
+
+.officer-mail {
+  background-color: #f19700;
+  /* width: 300px; */
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font: bold;
+  color: white;
+  margin-top: 10px;
+  font-size: larger;
+}
+
+.discipline-mail {
+  background-color: #d0151c;
+  /* width: 300px; */
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font: bold;
+  color: white;
+  margin-top: 10px;
+  font-size: larger;
+}
+
+.links {
+  height: 300px;
+  line-height: 2.2em;
+  font-size: 14px;
+  background-color: #f5f8f8;
+}
+
+.links-left {
+  margin-left: 40px;
+  color: black;
+  font-size: 16px;
+  font-weight: blod;
+}
+
+.links-title {
+  margin-left: 10px;
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: black;
+  height: 16px;
+}
+
+.links a {
+  margin-right: 30px;
+  font-size: 14px;
+  color: black;
+  text-align: center;
+}
+
+.links a:hover {
+  font-size: 14px;
+  color: #444444;
+}
+
+.links-content {
+  margin-left: 20px;
+  font-size: 14px;
+  color: #555555;
+}

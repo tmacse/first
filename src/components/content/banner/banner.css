@@ -1,0 +1,25 @@
+.banner {
+    /* display: inline; */
+    float: left;
+    width: 400px;
+    height: 60px;
+    background-color: #D4131B;
+    text-align: center;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.left {
+    border-right: 14px solid #FFF000;
+    /* transform: perspective(1em) rotateX(-1deg); */
+    transform-origin: bottom left;
+}
+
+.right {
+    border-left: 14px solid #FFF000;
+    /* transform: perspective(1em) rotateX(1deg); */
+    transform-origin: bottom right;
+}

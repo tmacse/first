@@ -1,0 +1,77 @@
+@import "~antd/dist/antd.css";
+
+.detail-header {
+  margin: 30px 0;
+}
+
+.ant-layout .ant-layout-header {
+  padding: 0 !important;
+}
+
+/* 重置投稿按钮的颜色 */
+.ant-btn-dangerous.ant-btn-primary {
+  background-color: #d0151c;
+  border-color: #d0151c;
+}
+
+.header-icon {
+  z-index: 50;
+  position: absolute;
+  overflow: hidden;
+  top: 22%;
+  right: 8.5%;
+  width: 135px;
+  height: 40px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+
+.header-icon span {
+  font-size: 20px;
+}
+
+.flex-left {
+  font-size: 50px;
+  display: block;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  /* top:90%; */
+  z-index: 40;
+  top: 10%;
+  opacity: 0.3;
+}
+
+.flex-right {
+  font-size: 50px;
+  display: block;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  /* margin: 0%; */
+  right: 0%;
+  top: 10%;
+  z-index: 40;
+  opacity: 0.3;
+}
+
+.font-logo {
+  height: 120px;
+  padding-left: 20%;
+  z-index: 9;
+  /* overflow: hidden; */
+  position: absolute;
+  top: 10%;
+}
+
+.carousel {
+  height: 250px;
+}
+
+.carousel div img {
+  height: 250px;
+  width: 100%;
+}

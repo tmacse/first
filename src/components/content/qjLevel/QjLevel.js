@@ -1,0 +1,33 @@
+import React, { Component } from 'react'
+import { Row, Col } from 'antd'
+import Left from './Left';
+import Mid from './Mid';
+import Right from './Right';
+
+class QjLevel extends Component {
+
+    render() {
+        return (
+            <div className='qj-level'>
+
+                <div className='tangle hoverable'>
+                    {/* <img  /> */}
+                    <span>强军阶梯</span>
+                </div>
+                <Row style={{ marginTop: "10px", height: "233px" }}>
+                    <Col span={6}  >
+                        <Left />
+                    </Col>
+                    <Col span={6}>
+                        <Mid />
+                    </Col>
+                    <Col span={12}>
+                        <Right />
+                    </Col>
+                </Row>
+            </div>
+        )
+    }
+}
+
+export default QjLevel;
