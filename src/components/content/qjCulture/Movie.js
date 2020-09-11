@@ -10,7 +10,7 @@ const contentStyle = {
 };
 const data = [
     'Racing car sprays burning .',
-    'Japanese princess to 22.',
+    'Japanese princess to 255555.',
     'Australian walks 100km ',
 ];
 
