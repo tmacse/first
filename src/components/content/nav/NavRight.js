@@ -3,13 +3,7 @@ import { Card, Divider, List, Typography } from 'antd'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
-const data = [
-    'Racing car sprays burning 1111111111111111111111111111111.',
-    'Japanese princess to .',
-    'Australian walks 100km ',
-    'Man charged over missing',
-    'Los Angeles battles',
-];
+
 
 class NavRight extends Component {
 
@@ -28,10 +22,10 @@ class NavRight extends Component {
                 <List
                     size="small"
                     bordered
-                    dataSource={data}
+                    dataSource={this.props.list}
                     renderItem={item => <List.Item>
                         <Typography.Text ellipsis="true">
-                            <Link to='/detail'>{item}</Link>
+                            <Link to='/detail'>{item.get('title')}</Link>
                         </Typography.Text></List.Item>}>
                 </List>
             </Card>
@@ -42,5 +36,5 @@ class NavRight extends Component {
 const mapStateToProps = (state) => ({
     list: state.get('home').get('noticelist')
 })
-// export default NavRight;
+
 export default connect(mapStateToProps, null)(NavRight);
