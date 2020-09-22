@@ -1,0 +1,1 @@
+export const INIT_NEWS_LIST_ACTION = 'init_news_list_action';

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { actionCreators } from './store';
+import { connect } from 'react-redux';
 
 import "./content.css"
 import Nav from './nav/Nav'
@@ -24,6 +26,14 @@ class Content extends Component {
             </div>
         )
     }
+    componentDidMount() {
+        this.props.changeHomeData();
+    }
 }
-
-export default Content;
+const mapDispatch = (dispatch) => ({
+    changeHomeData() {
+        const action = actionCreators.getHomeInfo();
+        dispatch(action);
+    }
+});
+export default connect(null, mapDispatch)(Content);

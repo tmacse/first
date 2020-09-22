@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Divider, List, Typography } from 'antd'
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 const data = [
@@ -38,4 +39,8 @@ class NavRight extends Component {
         )
     }
 }
-export default NavRight;
+const mapStateToProps = (state) => ({
+    list: state.get('home').get('noticelist')
+})
+// export default NavRight;
+export default connect(mapStateToProps, null)(NavRight);
