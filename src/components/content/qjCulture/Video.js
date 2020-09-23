@@ -18,7 +18,7 @@ export default class Video extends Component {
     render() {
         return (
             <div>
-                <Card hoverable title="练兵备战" class="movie-card">
+                <Card hoverable title="练兵备战" className="movie-card">
                     <Carousel effect="fade" autoplay>
                         <div>
                             <h3 style={contentStyle}>1</h3>

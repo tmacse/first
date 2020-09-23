@@ -17,7 +17,7 @@ export default class Vlog extends Component {
     render() {
         return (
             <div>
-                <Card hoverable title="创意视频" class="movie-card">
+                <Card hoverable title="创意视频" className="movie-card">
                     <Carousel effect="fade" autoplay>
                         <div>
                             <h3 style={contentStyle}>1</h3>

@@ -4,11 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 
-
 class NavRight extends Component {
-
-
-
     render() {
         return (
 
@@ -23,12 +19,13 @@ class NavRight extends Component {
                     size="small"
                     bordered
                     dataSource={this.props.list}
-                    renderItem={item => <List.Item>
+                    renderItem={item => <List.Item id={item.get('_id')} >
                         <Typography.Text ellipsis="true">
-                            <Link to='/detail'>{item.get('title')}</Link>
+                            <Link to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
                         </Typography.Text></List.Item>}>
                 </List>
-            </Card>
+
+            </Card >
 
         )
     }

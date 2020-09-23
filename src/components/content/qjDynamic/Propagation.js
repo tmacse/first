@@ -21,7 +21,7 @@ class Propagantion extends Component {
                         dataSource={data}
                         renderItem={item => <List.Item>
                             <Typography.Text ellipsis="true">
-                                <Link>
+                                <Link to='#'>
                                     {item}
                                 </Link>
                             </Typography.Text></List.Item>}>
