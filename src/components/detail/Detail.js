@@ -10,8 +10,8 @@ const { Title } = Typography;
 
 class Detail extends Component {
     render() {
-        // const content = this.props.content
-        const {title, time, department, content} = this.props
+        const { title, time, department, content } = this.props
+        console.log(this.props)
         return (
             <div>
                 <DetailHeader />
@@ -37,19 +37,20 @@ class Detail extends Component {
         )
     }
     componentDidMount() {
-        this.props.getDepartmentDetail(this.props.match.params._id)
-        console.log(this.props.match.params._id)
+        this.props.getDetail(this.props.match.params._id)
     }
 }
 const mapStateToProps = (state) => ({
     title: state.get('detail').get('title'),
-    content: state.getIn(['detail', 'content'])
+    content: state.getIn(['detail', 'content']),
+    time: state.getIn(['detail', 'time']),
+    department: state.getIn(['detail', 'department'])
 
 })
 const mapDispatchToProps = (dispatch) => ({
 
-    getDepartmentDetail(id) {
-        dispatch(actionCreators.getDepartmentDetail(id))
+    getDetail(id) {
+        dispatch(actionCreators.getDetail(id))
     }
 })
 
