@@ -1,15 +1,8 @@
 import React, { Component } from 'react'
 import { Card, List, Typography } from 'antd'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
 
-const data = [
-    'Racing car sprays burning .',
-    'Japanese princess to .',
-    'Australian walks 100km ',
-    'Man charged over missing',
-    'Los Angeles battles',
-    'Racing car sprays burning .',
-];
 class Mid extends Component {
     render() {
         return (
@@ -18,12 +11,10 @@ class Mid extends Component {
                     <List
                         size="small"
                         bordered
-                        dataSource={data}
-                        renderItem={item => <List.Item>
+                        dataSource={this.props.list}
+                        renderItem={item => <List.Item id={item.get('_id')}>
                             <Typography.Text ellipsis="true">
-                                <Link to='#'>
-                                    {item}
-                                </Link>
+                                <Link to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
                             </Typography.Text></List.Item>}>
                     </List>
                 </Card>
@@ -31,4 +22,7 @@ class Mid extends Component {
         )
     }
 }
-export default Mid;
+const mapStateToProps = (state) => ({
+    list: state.get('home').get('casebooklist')
+})
+export default connect(mapStateToProps, null)(Mid);

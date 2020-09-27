@@ -1,21 +1,9 @@
 import React, { Component } from 'react'
 import { Row, Col, Card, List, Typography, Carousel } from 'antd'
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-const data = [
-    'Racing car sprays burning .',
-    'Japanese princess to .',
-    'Australian walks 100km ',
-    'Man charged over missing',
-    'Los Angeles battles',
-    'Japanese princess to .',
-];
-const contentStyle = {
-    height: '233px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-};
+const path = require('path');
+
 class Right extends Component {
     render() {
         return (
@@ -23,30 +11,27 @@ class Right extends Component {
                 <Row>
                     <Col span={14}>
                         <Carousel >
-                            <div>
-                                <h3 style={contentStyle}>1</h3>
-                            </div>
-                            <div>
-                                <h3 style={contentStyle}>2</h3>
-                            </div>
-                            <div>
-                                <h3 style={contentStyle}>3</h3>
-                            </div>
-                            <div>
-                                <h3 style={contentStyle}>4</h3>
-                            </div>
+                            {
+                                this.props.list.map((item) => {
+                                    const url = path.join('/public/image/articles', item.get('thumbnail').get(0))
+                                    console.log(url)
+                                    return (
+                                        <div key={item.get('_id')}>
+                                            <Link to={`/detail/${item.get('_id')}`}><img style={{ height: '233px', width: '100%' }} src={url} alt='imag' /></Link>
+                                        </div>
+                                    )
+                                })
+                            }
                         </Carousel>
                     </Col>
                     <Col span={10}>
                         <List
                             size="small"
                             bordered
-                            dataSource={data}
-                            renderItem={item => <List.Item>
+                            dataSource={this.props.list}
+                            renderItem={item => <List.Item id={item.get('_id')}>
                                 <Typography.Text ellipsis="true">
-                                    <Link to='#'>
-                                        {item}
-                                    </Link>
+                                    <Link to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
                                 </Typography.Text></List.Item>}>
                         </List>
                     </Col>
@@ -56,4 +41,7 @@ class Right extends Component {
         )
     }
 }
-export default Right;
+const mapStateToProps = (state) => ({
+    list: state.get('home').get('summarylist')
+})
+export default connect(mapStateToProps, null)(Right);

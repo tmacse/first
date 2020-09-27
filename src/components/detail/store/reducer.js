@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import { GET_NOTICE_DETAIL } from './actionTypes';
+import { GET_DETAIL } from './actionTypes';
 const defaultDetailState = fromJS({
 	title: '',
 	content: '',
@@ -9,7 +9,7 @@ const defaultDetailState = fromJS({
 
 export default (state = defaultDetailState, action) => {
 	switch (action.type) {
-		case GET_NOTICE_DETAIL:
+		case GET_DETAIL:
 			return state.merge({
 				title: fromJS(action.title),
 				content: fromJS(action.content),

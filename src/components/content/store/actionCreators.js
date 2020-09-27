@@ -7,9 +7,10 @@ export const getHomeInfo = () => {
 			const result = res.data.data;
 			const action = {
 				type: CHANGE_HOME_DATA,
-				newslist: result.newslist,
+				curriculumlist: result.curriculumlist,
 				noticelist: result.noticelist,
-
+				casebooklist: result.casebooklist,
+				summarylist: result.summarylist,
 			}
 			dispatch(action);
 		})

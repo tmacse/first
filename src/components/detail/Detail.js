@@ -11,7 +11,6 @@ const { Title } = Typography;
 class Detail extends Component {
     render() {
         const { title, time, department, content } = this.props
-        console.log(this.props)
         return (
             <div>
                 <DetailHeader />
@@ -40,6 +39,7 @@ class Detail extends Component {
         this.props.getDetail(this.props.match.params._id)
     }
 }
+//返回过来的状态
 const mapStateToProps = (state) => ({
     title: state.get('detail').get('title'),
     content: state.getIn(['detail', 'content']),
@@ -48,7 +48,6 @@ const mapStateToProps = (state) => ({
 
 })
 const mapDispatchToProps = (dispatch) => ({
-
     getDetail(id) {
         dispatch(actionCreators.getDetail(id))
     }
