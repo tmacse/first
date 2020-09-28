@@ -4,7 +4,12 @@ const defaultNewState = fromJS({
 	curriculumlist: [],
 	noticelist: [],
 	casebooklist: [],
-	summarylist: []
+	summarylist: [],
+	governmentlist: [],
+	trainlist: [],
+	organizationlist: [],
+	propagationlist: [],
+	manpowerlist: []
 })
 
 export default (state = defaultNewState, action) => {
@@ -14,7 +19,12 @@ export default (state = defaultNewState, action) => {
 				curriculumlist: fromJS(action.curriculumlist),
 				noticelist: fromJS(action.noticelist),
 				casebooklist: fromJS(action.casebooklist),
-				summarylist: fromJS(action.summarylist)
+				summarylist: fromJS(action.summarylist),
+				governmentlist: fromJS(action.governmentlist),
+				trainlist: fromJS(action.trainlist),
+				organizationlist: fromJS(action.organizationlist),
+				propagationlist: fromJS(action.propagationlist),
+				manpowerlist: fromJS(action.manpowerlist)
 			})
 		default:
 	}

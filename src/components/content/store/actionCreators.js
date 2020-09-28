@@ -11,6 +11,11 @@ export const getHomeInfo = () => {
 				noticelist: result.noticelist,
 				casebooklist: result.casebooklist,
 				summarylist: result.summarylist,
+				governmentlist: result.governmentlist,
+				trainlist: result.trainlist,
+				organizationlist: result.organizationlist,
+				propagationlist: result.propagationlist,
+				manpowerlist: result.manpowerlist
 			}
 			dispatch(action);
 		})

@@ -1,29 +1,20 @@
 import React, { Component } from 'react'
 import { Card, List, Typography } from 'antd'
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
-const data = [
-    'Racing car sprays burning .',
-    'Japanese princess to .',
-    'Australian walks 100km ',
-    'Man charged over missing',
-    'Los Angeles battles',
-    'Man charged over missing',
-];
-class Propagantion extends Component {
+class Propagation extends Component {
     render() {
         return (
             <div>
-                <Card hoverable title="宣传保卫办" className="my-card">
+                <Card title="宣传保卫办" hoverable className="my-card">
                     <List
                         size="small"
                         bordered
-                        dataSource={data}
-                        renderItem={item => <List.Item>
+                        dataSource={this.props.list}
+                        renderItem={item => <List.Item id={item.get('_id')}>
                             <Typography.Text ellipsis="true">
-                                <Link to='#'>
-                                    {item}
-                                </Link>
+                                <Link to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
                             </Typography.Text></List.Item>}>
                     </List>
                 </Card>
@@ -31,4 +22,7 @@ class Propagantion extends Component {
         )
     }
 }
-export default Propagantion;
+const mapStateToProps = (state) => ({
+    list: state.get('home').get('propagationlist')
+})
+export default connect(mapStateToProps, null)(Propagation);
