@@ -15,7 +15,8 @@ export const getHomeInfo = () => {
 				trainlist: result.trainlist,
 				organizationlist: result.organizationlist,
 				propagationlist: result.propagationlist,
-				manpowerlist: result.manpowerlist
+				manpowerlist: result.manpowerlist,
+				videolist: result.videolist,
 			}
 			dispatch(action);
 		})

@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import { Row, Col, Card, List } from 'antd'
 import "../../../node_modules/video-react/dist/video-react.css";
+import { connect } from 'react-redux';
+import { BASE_VIDEO_ADDRESS } from '../../constant'
+import { actionCreators } from './store';
 import DetailHeader from '../header/DetailHeader'
 import Footer from '../footer/Footer'
-
 import { Player, BigPlayButton } from 'video-react'
+
+// const path = require('path');
 
 const data = [
     'Racing car sprays burning fuel into crowd.',
@@ -14,24 +18,33 @@ const data = [
     'Los Angeles battles huge wildfires.',
 ];
 
-export default class MovieDetail extends Component {
+class MovieDetail extends Component {
     render() {
+        const url = this.props.url
+        console.log(url)
         return (
             <div>
                 <DetailHeader />
                 <Row style={{ marginBottom: "40px" }}>
                     <Col span={14} offset={3}>
-                        <Player
-                            fluid={false}
-                            height="450px"
-                            width="800px"
-                            playsInline
-                            className="video-detail"
-                            poster="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598585166565&di=631ea2b3ae30c158d97cef1e3bae1760&imgtype=0&src=http%3A%2F%2Ft7.baidu.com%2Fit%2Fu%3D3568922409%2C458394541%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1500%26h%3D900"
-                            src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-                        >
-                            <BigPlayButton position="center" />
-                        </Player>
+
+                        {this.props.url.length !== 0 && <p key={url}>
+                            {this.props.url.map((item) => {
+                                return (
+                                    <Player
+                                        fluid={false}
+                                        height="450px"
+                                        width="800px"
+                                        playsInline
+                                        className="video-detail"
+                                        src={BASE_VIDEO_ADDRESS + item}
+                                    >
+                                        <BigPlayButton position="center" />
+                                    </Player>
+                                )
+                            })}
+                        </p>
+                        }
                     </Col>
                     <Col span={4}>
 
@@ -58,12 +71,27 @@ export default class MovieDetail extends Component {
                                 )}
                             />
                         </Card>
-
-
                     </Col>
                 </Row>
                 <Footer />
             </div>
         )
     }
+    componentDidMount() {
+        this.props.getDetail(this.props.match.params.id)
+        console.log(this.props.match.params.id)
+    }
 }
+//返回过来的状态
+const mapStateToProps = (state) => ({
+    name: state.get('moviedetail').get('name'),
+    url: state.getIn(['moviedetail', 'url']),
+
+})
+const mapDispatchToProps = (dispatch) => ({
+    getDetail(id) {
+        dispatch(actionCreators.getDetail(id))
+    }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MovieDetail);
