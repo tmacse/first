@@ -37,6 +37,6 @@ class Movie extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    list: state.get('home').get('videolist')
+    list: state.get('home').get('movielist')
 })
 export default connect(mapStateToProps, null)(Movie);

@@ -1,45 +1,34 @@
 import React, { Component } from 'react'
 import { Card, Carousel, List, Typography } from 'antd'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
+const path = require('path');
 
-const contentStyle = {
-    height: '255px',
-    color: '#fff',
-    lineHeight: '255px',
-    textAlign: 'center',
-    background: '#364d79',
-};
-const data = [
-    'Racing car sprays burning .',
-    'Japanese princess to .',
-    'Australian walks 100km ',
-];
-
-export default class Video extends Component {
+class Video extends Component {
     render() {
         return (
             <div>
                 <Card hoverable title="练兵备战" className="movie-card">
                     <Carousel effect="fade" autoplay>
-                        <div>
-                            <h3 style={contentStyle}>1</h3>
-                        </div>
-                        <div>
-                            <h3 style={contentStyle}>2</h3>
-                        </div>
-                        <div>
-                            <h3 style={contentStyle}>3</h3>
-                        </div>
-                        <div>
-                            <h3 style={contentStyle}>4</h3>
-                        </div>
+                        {this.props.list.map((item) => {
+                            const url = path.join('/public/video', item.get('url').get(0))
+                            console.log(url)
+                            return (
+                                <div key={item.get('_id')}>
+                                    <Link to={`/movie_detail/${item.get('_id')}`}>
+                                        <video style={{ height: '233px', width: '100%' }} src={url} alt='video' />
+                                    </Link>
+                                </div>
+                            )
+                        })}
                     </Carousel>
                     <List
                         size="small"
                         bordered
-                        dataSource={data}
-                        renderItem={item => <List.Item>
+                        dataSource={this.props.list}
+                        renderItem={item => <List.Item id={item.get('_id')}>
                             <Typography.Text ellipsis="true">
-                                {item}
+                                <Link to={`/movie_detail/${item.get('_id')}`}>{item.get('name')}</Link>
                             </Typography.Text></List.Item>}>
                     </List>
                 </Card>
@@ -47,3 +36,7 @@ export default class Video extends Component {
         )
     }
 }
+const mapStateToProps = (state) => ({
+    list: state.get('home').get('videolist')
+})
+export default connect(mapStateToProps, null)(Video);

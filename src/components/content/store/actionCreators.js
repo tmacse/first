@@ -16,7 +16,9 @@ export const getHomeInfo = () => {
 				organizationlist: result.organizationlist,
 				propagationlist: result.propagationlist,
 				manpowerlist: result.manpowerlist,
+				movielist: result.movielist,
 				videolist: result.videolist,
+				vloglist: result.vloglist,
 			}
 			dispatch(action);
 		})

@@ -10,7 +10,9 @@ const defaultNewState = fromJS({
 	organizationlist: [],
 	propagationlist: [],
 	manpowerlist: [],
+	movielist: [],
 	videolist: [],
+	vloglist: [],
 })
 
 export default (state = defaultNewState, action) => {
@@ -26,7 +28,9 @@ export default (state = defaultNewState, action) => {
 				organizationlist: fromJS(action.organizationlist),
 				propagationlist: fromJS(action.propagationlist),
 				manpowerlist: fromJS(action.manpowerlist),
-				videolist: fromJS(action.videolist)
+				movielist: fromJS(action.movielist),
+				videolist: fromJS(action.videolist),
+				vloglist: fromJS(action.vloglist),
 			})
 		default:
 	}
