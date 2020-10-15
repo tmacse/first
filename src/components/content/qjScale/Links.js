@@ -7,22 +7,22 @@ export default class Links extends Component {
                 <Row style={{ marginTop: 25 }}>
                     <Col span={4}><span className='links-left'>军委及相关部队：</span></Col>
                     <Col span={18}>
-                        <a href='http://www.qjw.jw/'>全军强军网</a>
-                        <a href='http://www.qjw.db/'>东部战区</a>
-                        <a href='http://www.qjw.nb/'>南部战区</a>
-                        <a href='http://www.qjw.xb/'>西部战区</a>
-                        <a href='http://www.qjw.bb/'>北部战区</a>
-                        <a href='http://www.qjw.zb/'>中部战区</a>
-                        <a href='http://www.qjw.lj/'>陆军</a>
-                        <a href='http://www.qjw.hj/'>海军</a>
-                        <a href='http://www.qjw.kj/'>空军</a>
-                        <a href='http://www.qjw.hjj/'>火箭军</a>
-                        <a href='http://www.qjw.zy/'>战略支援部队</a>
-                        <a href='http://27.144.32.99/'>联勤保障部队</a>
-                        <a href='http://www.qjw.jk/'>军事科学院</a>
-                        <a href='http://www.gfdxqjw.mtn/'>国防大学</a>
-                        <a href='http://www.gfkdqjw.mtn/'>国防科技大学</a>
-                        <a href='http://www.qjw.wj/'>武警部队</a>
+                        <a target="_black" href='http://www.qjw.jw/'>全军强军网</a>
+                        <a target="_black" href='http://www.qjw.db/'>东部战区</a>
+                        <a target="_black" href='http://www.qjw.nb/'>南部战区</a>
+                        <a target="_black" href='http://www.qjw.xb/'>西部战区</a>
+                        <a target="_black" href='http://www.qjw.bb/'>北部战区</a>
+                        <a target="_black" href='http://www.qjw.zb/'>中部战区</a>
+                        <a target="_black" href='http://www.qjw.lj/'>陆军</a>
+                        <a target="_black" href='http://www.qjw.hj/'>海军</a>
+                        <a target="_black" href='http://www.qjw.kj/'>空军</a>
+                        <a target="_black" href='http://www.qjw.hjj/'>火箭军</a>
+                        <a target="_black" href='http://www.qjw.zy/'>战略支援部队</a>
+                        <a target="_black" href='http://27.144.32.99/'>联勤保障部队</a>
+                        <a target="_black" href='http://www.qjw.jk/'>军事科学院</a>
+                        <a target="_black" href='http://www.gfdxqjw.mtn/'>国防大学</a>
+                        <a target="_black" href='http://www.gfkdqjw.mtn/'>国防科技大学</a>
+                        <a target="_black" href='http://www.qjw.wj/'>武警部队</a>
                     </Col>
                 </Row>
                 <Divider />

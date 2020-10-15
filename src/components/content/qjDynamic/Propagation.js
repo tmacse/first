@@ -14,7 +14,7 @@ class Propagation extends Component {
                         dataSource={this.props.list}
                         renderItem={item => <List.Item id={item.get('_id')}>
                             <Typography.Text ellipsis="true">
-                                <Link to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
+                                <Link target="_black" to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
                             </Typography.Text></List.Item>}>
                     </List>
                 </Card>

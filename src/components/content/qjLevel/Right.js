@@ -17,7 +17,7 @@ class Right extends Component {
                                     console.log(url)
                                     return (
                                         <div key={item.get('_id')}>
-                                            <Link to={`/detail/${item.get('_id')}`}><img style={{ height: '233px', width: '100%' }} src={url} alt='imag' /></Link>
+                                            <Link target="_black" to={`/detail/${item.get('_id')}`}><img style={{ height: '233px', width: '100%' }} src={url} alt='imag' /></Link>
                                         </div>
                                     )
                                 })
@@ -31,7 +31,7 @@ class Right extends Component {
                             dataSource={this.props.list}
                             renderItem={item => <List.Item id={item.get('_id')}>
                                 <Typography.Text ellipsis="true">
-                                    <Link to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
+                                    <Link target="_black" to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
                                 </Typography.Text></List.Item>}>
                         </List>
                     </Col>

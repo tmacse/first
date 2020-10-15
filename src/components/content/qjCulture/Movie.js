@@ -15,7 +15,7 @@ class Movie extends Component {
                             console.log(url)
                             return (
                                 <div key={item.get('_id')}>
-                                    <Link to={`/movie_detail/${item.get('_id')}`}>
+                                    <Link target="_black" to={`/movie_detail/${item.get('_id')}`}>
                                         <video style={{ height: '233px', width: '100%' }} src={url} alt='video' />
                                     </Link>
                                 </div>
@@ -28,7 +28,7 @@ class Movie extends Component {
                         dataSource={this.props.list}
                         renderItem={item => <List.Item id={item.get('_id')}>
                             <Typography.Text ellipsis="true">
-                                <Link to={`/movie_detail/${item.get('_id')}`}>{item.get('name')}</Link>
+                                <Link target="_black" to={`/movie_detail/${item.get('_id')}`}>{item.get('name')}</Link>
                             </Typography.Text></List.Item>}>
                     </List>
                 </Card>
