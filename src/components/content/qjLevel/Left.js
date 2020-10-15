@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 class Left extends Component {
+
     render() {
+
         return (
             <div>
                 <Card hoverable title="精品课程">

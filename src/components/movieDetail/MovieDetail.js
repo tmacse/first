@@ -27,7 +27,6 @@ class MovieDetail extends Component {
                 <DetailHeader />
                 <Row style={{ marginBottom: "40px" }}>
                     <Col span={14} offset={3}>
-
                         {this.props.url.length !== 0 && <p key={url}>
                             {this.props.url.map((item) => {
                                 return (
@@ -62,7 +61,6 @@ class MovieDetail extends Component {
                                 renderItem={item => (
                                     <List.Item>
                                         <List.Item.Meta
-
                                             title={<a href="https://ant.design">{item.title}</a>}
                                             description="Ant Design, a design language "
                                         />
@@ -79,7 +77,6 @@ class MovieDetail extends Component {
     }
     componentDidMount() {
         this.props.getDetail(this.props.match.params.id)
-        console.log(this.props.match.params.id)
     }
 }
 //返回过来的状态

@@ -6,12 +6,13 @@ import { Link } from 'react-router-dom'
 
 class NavRight extends Component {
     render() {
+        const title = 'notices'
         return (
 
             <Card style={{ height: "300px" }}>
                 <div className="junwang">
-                    <Link to='/list'>
-                        <span style={{ marginLeft: "10px" }}>通知、公告栏</span>
+                    <Link to={`/list/${title}`}>
+                        <span style={{ marginLeft: "10px" }}>{title}</span>
                     </Link>
                 </div>
                 <Divider />
@@ -33,5 +34,6 @@ class NavRight extends Component {
 const mapStateToProps = (state) => ({
     list: state.get('home').get('noticelist')
 })
+
 
 export default connect(mapStateToProps, null)(NavRight);

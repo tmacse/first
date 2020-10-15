@@ -14,7 +14,7 @@ function App() {
         <BrowserRouter>
           <ScrollToTop>
             <Route path="/" component={Home} exact />
-            <Route path='/list' component={List} exact />
+            <Route path='/list/:attr' component={List} exact />
             <Route path='/detail/:_id' component={Detail} exact />
             <Route path='/movie_detail/:id' component={MovieDetail} exact />
           </ScrollToTop>
