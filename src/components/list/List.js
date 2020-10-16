@@ -14,7 +14,6 @@ class List extends Component {
     render() {
         const data = this.props.list.list
         const { total, PAGE_SIZE } = this.props.list
-        console.log(this.props.match.params.attr)
         return (
             <div>
                 <Header />

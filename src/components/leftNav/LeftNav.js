@@ -12,12 +12,16 @@ const menu = (
     </Menu>);
 
 class LeftNav extends Component {
-
     render() {
-        console.log(this.props.attr)
+        const head = this.props.attr
+        console.log(head)
+        const list = ['index', 'notices', 'curriculum', 'case', 'symposia', 'dynamic', 'movie', 'video', 'vlog']
         return (
             <ul className="detail-left-ul">
-                <li className='detail-left-li'><Link to='/'>场站首页</Link></li>
+                {list.map((item) => (
+                    <li className={item === head ? 'awalys' : 'detail-left-li'}>{item}</li>
+                ))}
+                {/* <li className='detail-left-li'><Link to='/'>场站首页</Link></li>
                 <li className='detail-left-li'><Link to='/list/notices'>通知公告</Link></li>
                 <li className='detail-left-li'><Link to='/list'>精品课程</Link></li>
                 <li className='detail-left-li'><Link to='/list'>案例分析</Link></li>
@@ -30,13 +34,10 @@ class LeftNav extends Component {
                     <Dropdown overlay={menu}>
                         <Link to='/department'>科室动态</Link>
                     </Dropdown>
-                </li>
+                </li> */}
 
             </ul>
         )
-    }
-    componentDidMount() {
-        console.log(this.props)
     }
 }
 export default LeftNav;
