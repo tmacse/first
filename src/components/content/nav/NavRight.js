@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 class NavRight extends Component {
     render() {
         const title = 'notices'
+        // const PageNum = 1
         return (
 
             <Card style={{ height: "300px" }}>

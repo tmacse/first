@@ -1,3 +1,45 @@
+.detail-left-ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  padding-left: 0;
+  width: 180px;
+}
+.list-container{
+  width: 1200px;
+  margin: 0 auto;
+}
+.newslist-a {
+  background: url(/public/image/list-icon-a.png) no-repeat 5px center;
+  padding-left: 20px;
+}
+.awalys {
+  text-align: center;
+  font-size: 16px;
+  /* margin-left: 10px; */
+  background: #c84742;
+  color: #ffffff;
+  line-height: 50px;
+  height: 50px;
+  display: block;
+  padding: 0;
+  width: 280px;
+}
+
+.detail-left-li {
+  text-align: center;
+  line-height: 50px;
+  display: block;
+  font-size: 16px;
+  height: 50px;
+  display: block;
+  color: #333333;
+  width: 280px;
+}
 .container {
   margin: 30px auto 0 auto;
   width: 1200px;
