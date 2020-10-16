@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 class Left extends Component {
 
     render() {
-
+        const title = 'curriculum'
         return (
             <div>
-                <Card hoverable title="精品课程">
+                <Card hoverable title={<Link to={`/list/${title}`}>精品课程</Link>}>
                     <List
                         size="small"
                         bordered

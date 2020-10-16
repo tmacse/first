@@ -7,13 +7,11 @@ import { Link } from 'react-router-dom'
 class NavRight extends Component {
     render() {
         const title = 'notices'
-        // const PageNum = 1
         return (
-
             <Card style={{ height: "300px" }}>
                 <div className="junwang">
                     <Link to={`/list/${title}`}>
-                        <span style={{ marginLeft: "10px" }}>{title}</span>
+                        <span style={{ marginLeft: "10px" }}>通知公告</span>
                     </Link>
                 </div>
                 <Divider />
@@ -26,7 +24,6 @@ class NavRight extends Component {
                             <Link target="_black" to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
                         </Typography.Text></List.Item>}>
                 </List>
-
             </Card >
 
         )

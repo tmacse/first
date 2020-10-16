@@ -2,9 +2,9 @@ import axios from 'axios';
 import { GET_NOTICE_LIST } from './actionTypes';
 
 //异步获得通知列表的界面
-export const getList = (attr) => {
+export const getList = (attr, pageNum = 1) => {
 	return (dispatch) => {
-		axios.get(`/${attr}/list`).then((res) => {
+		axios.get(`/${attr}/list?pageNum=` + pageNum).then((res) => {
 			const result = res.data.data;
 			// console.log('1', result)
 			const action = {

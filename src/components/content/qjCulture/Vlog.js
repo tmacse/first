@@ -6,9 +6,10 @@ const path = require('path');
 
 class Vlog extends Component {
     render() {
+        const title = 'vlog'
         return (
             <div>
-                <Card hoverable title="创意视频" className="movie-card">
+                <Card hoverable title={<Link to={`/list/${title}`}>创意视频</Link>} className="movie-card">
                     <Carousel effect="fade" autoplay>
                         {this.props.list.map((item) => {
                             const url = path.join('/public/video', item.get('url').get(0))

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
+import { Link } from 'react-router-dom'
 import Government from './Government';
 import Train from './Train';
 import '../content.css'
@@ -11,11 +12,11 @@ import ManPower from './ManPower';
 class QjDynamic extends Component {
 
     render() {
+        const title = 'dynamic'
         return (
             <div className='qj-level'>
                 <div className='tangle hoverable'>
-                    {/* <img  /> */}
-                    <span>强军动态</span>
+                    <span><Link to={`/list/${title}`}>强军动态</Link></span>
                 </div>
                 <Row style={{ marginTop: "10px", height: "233px" }}>
                     <Col flex={1}>

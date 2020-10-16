@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 
 class Mid extends Component {
     render() {
+        const title = 'case'
         return (
             <div>
-                <Card title="案例分析" hoverable>
+                <Card hoverable title={<Link to={`/list/${title}`}>案列分析</Link>}>
                     <List
                         size="small"
                         bordered

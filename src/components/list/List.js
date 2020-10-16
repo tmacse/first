@@ -10,10 +10,17 @@ import LeftNav from '../leftNav/LeftNav';
 const { Column } = Table;
 
 class List extends Component {
-
+    state = {
+        current: 1,
+    };
+    onChange = page => {
+        this.setState({ current: page, });
+        this.getList(this.props.match.params.attr, page)
+        console.log(this.props.match.params.attr, page)
+    };
     render() {
         const data = this.props.list.list
-        const { total, PAGE_SIZE } = this.props.list
+        const { total } = this.props.list
         return (
             <div>
                 <Header />
@@ -31,10 +38,10 @@ class List extends Component {
                                 //分页的配置对象
                                 pagination={{
                                     total,
-                                    defaultPageSize: PAGE_SIZE,
+                                    defaultPageSize: 10,
                                     showQuickJumper: true,
-                                    defaultCurrent: 1,
-                                    // onChange: this.props.getList(PAGE_NUM),//要传递一个参数选择是哪一页
+                                    defaultCurrent: this.state.current,
+                                    onChange: this.onChange,//要传递一个参数选择是哪一页
                                 }}
                                 dataSource={data.list} >
                                 <Column
@@ -60,6 +67,7 @@ class List extends Component {
     }
     componentDidMount() {
         this.props.getList(this.props.match.params.attr)
+        console.log(this.state.current)
     }
 
 }

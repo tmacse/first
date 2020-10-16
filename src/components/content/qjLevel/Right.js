@@ -6,8 +6,9 @@ const path = require('path');
 
 class Right extends Component {
     render() {
+        const title = 'symposia'
         return (
-            <Card title="活动概况" hoverable>
+            <Card hoverable title={<Link to={`/list/${title}`}>活动概况</Link>}>
                 <Row>
                     <Col span={14}>
                         <Carousel >
