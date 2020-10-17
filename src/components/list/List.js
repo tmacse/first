@@ -13,14 +13,19 @@ class List extends Component {
     state = {
         current: 1,
     };
+//通过配置OnChange实现了切换页数，随时更新页面内容的想过
     onChange = page => {
         this.setState({ current: page, });
-        this.getList(this.props.match.params.attr, page)
         console.log(this.props.match.params.attr, page)
+        this.props.getList(this.props.match.params.attr, page)
     };
+    componentDidMount() {
+        this.props.getList(this.props.match.params.attr, this.state.current)
+    }
     render() {
         const data = this.props.list.list
-        const { total } = this.props.list
+        const { total } = this.props.list.list
+        console.log('total', total)
         return (
             <div>
                 <Header />
@@ -65,19 +70,14 @@ class List extends Component {
             </div>
         )
     }
-    componentDidMount() {
-        this.props.getList(this.props.match.params.attr)
-        console.log(this.state.current)
-    }
-
 }
 //返回过来的状态
 const mapStateToProps = (state) => ({
     list: state.get('list')
 })
 const mapDispatchToProps = (dispatch) => ({
-    getList(attr) {
-        dispatch(actionCreators.getList(attr))
+    getList(attr, page) {
+        dispatch(actionCreators.getList(attr, page))
     }
 })
 
