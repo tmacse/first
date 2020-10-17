@@ -13,7 +13,7 @@ class List extends Component {
     state = {
         current: 1,
     };
-//通过配置OnChange实现了切换页数，随时更新页面内容的想过
+//通过配置OnChange实现了切换页数，随时更新页面内容的效果
     onChange = page => {
         this.setState({ current: page, });
         console.log(this.props.match.params.attr, page)
