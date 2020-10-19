@@ -13,26 +13,26 @@ class List extends Component {
     state = {
         current: 1,
     };
-//通过配置OnChange实现了切换页数，随时更新页面内容的效果
+    //通过配置OnChange实现了切换页数，随时更新页面内容的效果
     onChange = page => {
         this.setState({ current: page, });
-        console.log(this.props.match.params.attr, page)
         this.props.getList(this.props.match.params.attr, page)
     };
     componentDidMount() {
         this.props.getList(this.props.match.params.attr, this.state.current)
+        console.log(this.props)
     }
+
     render() {
         const data = this.props.list.list
         const { total } = this.props.list.list
-        console.log('total', total)
         return (
             <div>
                 <Header />
                 <div className='list-container'>
                     <Row>
                         <Col span={7} >
-                            <LeftNav attr={this.props.match.params.attr} />
+                            <LeftNav attr={this.props.match.params.attr} updateList={this.props.getList} />
                         </Col>
                         <Col style={{ marginTop: 20 }} span={17}>
                             <Table
@@ -64,11 +64,17 @@ class List extends Component {
                             </Table>
                         </Col>
                     </Row>
-
                 </div>
                 <Footer />
             </div>
         )
+    }
+    //通过此生命周期，拿到了更新后的attr值(实现了点击左边LeftNav的值实现了切换的效果)
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.location.pathname !== this.props.location.pathname) {
+            this.props.getList(nextProps.match.params.attr, 1)
+        }
+
     }
 }
 //返回过来的状态
