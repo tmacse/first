@@ -1,0 +1,77 @@
+import { Col, Row, Form, Input, Button, Select, message } from 'antd'
+import React, { Component, } from 'react'
+import Footer from '../footer/Footer'
+import Header from '../header/Header'
+import { BASE_ALL_DEPARTMENT } from '../../consant/Consant'//定义了枚举的列表
+import { reqAddMail } from '../../api'
+
+const { Item } = Form
+const { TextArea } = Input
+const { Option } = Select
+//设置填空选项的样式和提交按钮的样式
+const layout = { labelCol: { span: 6 }, wrapperCol: { span: 16 }, };
+const tailLayout = { wrapperCol: { offset: 6, span: 16 }, };
+
+
+class MailDetail extends Component {
+    //定义提交的反馈
+    onFinish = async values => {
+        console.log('Success:', values);
+        const result = await reqAddMail(values)
+        if (result.err === 0) {
+            message.success('邮件成功投递')
+            this.props.history.push('/success', values.leader)
+        }
+        else {
+            message.error('邮件发送失败，请与管理员联系')
+        }
+
+    }
+    //定义提交失败的反馈
+    onFinishFailed = errorInfo => { console.log('Failed:', errorInfo); };
+
+    render() {
+        //获取前段传来的值
+        console.log(this.props.match.params.attr)
+        return (
+            <>
+                <Header />
+                <Row>
+                    <Col span={16} offset={4} style={{ marginTop: 60 }}>
+                        <Form {...layout} name="basic"
+                            initialValues={{ leader: this.props.match.params.attr }}
+                            onFinish={this.onFinish}
+                            onFinishFailed={this.onFinishFailed}>
+                            <Item label='首长' name='leader' rules={[{ required: true, message: '请选择首长' }]}>
+                                <Select >
+                                    <Option value="zw">政委信箱</Option>
+                                    <Option value="zz">站长信箱</Option>
+                                    <Option value="zr">主任信箱</Option>
+                                    <Option value="jw">纪委信箱</Option>
+                                </Select>
+                            </Item>
+
+                            <Item label="主题" name="title" rules={[{ required: true, message: '请输入邮件主题' }]} >
+                                <Input placeholder='请输入邮件主题' />
+                            </Item>
+                            <Item label="内容" name="content" rules={[{ required: true, message: '请输入邮件内容' }]} >
+                                <TextArea rows={6} placeholder='请输入邮件正文' />
+                            </Item>
+                            <Item label="单位" name="department"
+                                rules={[{ required: true, message: '请填写单位' },
+                                { type: "enum", enum: BASE_ALL_DEPARTMENT }]}>
+                                <Input placeholder='请输入单位' />
+                            </Item>
+                            <Item label="发信人" name="name" rules={[{ required: true, message: '请填写姓名' }]}>
+                                <Input placeholder='请输入姓名' />
+                            </Item>
+                            <Form.Item {...tailLayout}> <Button block type="primary" htmlType="submit">提交</Button> </Form.Item>
+                        </Form>
+                    </Col>
+                </Row>
+                <Footer />
+            </>
+        )
+    }
+}
+export default MailDetail;

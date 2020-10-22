@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import { MailOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 export default class QjMail extends Component {
     render() {
@@ -9,7 +10,10 @@ export default class QjMail extends Component {
                 <Row>
                     <Col className="station-master-mail" span={6}>
                         <MailOutlined />
-                        <span className="mail-text">站长信箱</span>
+                        <Link to='/mail/zz'>
+                            <span className="mail-text">站长信箱</span>
+                        </Link>
+
                     </Col>
                     <Col className="commissioner-mail" span={6}>
                         <MailOutlined />

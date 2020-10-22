@@ -5,7 +5,7 @@ import { GET_NOTICE_LIST } from './actionTypes';
 export const getList = (attr, page) => {
 	console.log(attr, page)
 	return (dispatch) => {
-		axios.get(`/${attr}/list`, { params: { 'attr': attr, 'pageNum': page, 'pageSize': 10 } }).then((res) => {
+		axios.get(`/list/${attr}`, { params: { 'attr': attr, 'pageNum': page, 'pageSize': 10 } }).then((res) => {
 			const result = res.data.data;
 			const action = {
 				type: GET_NOTICE_LIST,

@@ -7,6 +7,8 @@ import List from './components/list/List';
 import Detail from './components/detail/Detail';
 import MovieDetail from './components/movieDetail/MovieDetail'
 import ScrollToTop from './components/ScrollToTop';
+import MailDetail from './components/mail/MailDetail';
+import Success from './components/success/Success';
 function App() {
   return (
     <Provider store={store}>
@@ -17,6 +19,8 @@ function App() {
             <Route path='/list/:attr' component={List} exact />
             <Route path='/detail/:_id' component={Detail} exact />
             <Route path='/movie_detail/:id' component={MovieDetail} exact />
+            <Route path='/mail/:attr' component={MailDetail}></Route>
+            <Route path='/success' component={Success}></Route>
           </ScrollToTop>
         </BrowserRouter>
       </div>

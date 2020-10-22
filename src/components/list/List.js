@@ -24,8 +24,10 @@ class List extends Component {
     }
 
     render() {
-        const data = this.props.list.list
-        const { total } = this.props.list.list
+        const MovieList = ['movie', 'video', 'vlog']
+        const data = this.props.list.list//获取渲染的list
+        const currentAttr = this.props.match.params.attr//获取当前的attr来判断进入不同的detail界面
+        const { total } = this.props.list.list //从后台反馈回来的数据中提取出total
         return (
             <div>
                 <Header />
@@ -53,10 +55,10 @@ class List extends Component {
                                     filtered={true}
                                     key="action"
                                     render={(item) => (
-                                        <Link to={`/detail/${item._id}`}>
-                                            <span className='newslist-a'></span>
-                                            {item.title}
-                                        </Link>)}
+                                        MovieList.indexOf(currentAttr) === -1 ?//三元表达式判断进入到哪一个详情界面
+                                            <Link target='_black' to={`/detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link> :
+                                            <Link target='_black' to={`/movie_detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link>
+                                    )}
                                 />
                                 <Column title='时间'
                                     render={(item) => (<span style={{ float: "right" }}>{item.time}</span>)}
