@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
-const list = [
-    { name: 'index', Cname: '首页' }, { name: 'notices', Cname: '通知公告' },
-    { name: 'curriculum', Cname: '精品课程' }, { name: 'case', Cname: '案例分析' },
-    { name: 'symposia', Cname: '活动概况' }, { name: 'dynamic', Cname: '强军动态' },
-    { name: 'movie', Cname: '强军影视' }, { name: 'video', Cname: '练兵备战' }, { name: 'vlog', Cname: '创意视频' },
-]
+import { NAV_LIST } from '../../consant/Consant'
+
 class LeftNav extends Component {
 
     render() {
@@ -14,7 +10,7 @@ class LeftNav extends Component {
         // console.log(this.props.updateList)
         return (
             <ul className="detail-left-ul">
-                {list.map((item) => (
+                {NAV_LIST.map((item) => (
                     <li key={item.name} className={item.name === head ? 'awalys' : 'detail-left-li'}>
                         {item.name === 'index' ?
                             <NavLink to='/'>{item.Cname}</NavLink> :

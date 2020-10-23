@@ -3,3 +3,11 @@ export const BASE_ALL_DEPARTMENT = [
     '财务股', '军需股', '油料股', '运输股', '机场营房股', '航材军械股', '飞行管制室', '气象台', '医院',
     '通信导航连', '警卫连', '汽车连', '场务连', '四站连'
 ]
+export const NAV_LIST = [
+    { name: 'index', Cname: '首页' }, { name: 'notices', Cname: '通知公告' },
+    { name: 'curriculum', Cname: '精品课程' }, { name: 'case', Cname: '案例分析' },
+    { name: 'symposia', Cname: '活动概况' }, { name: 'dynamic', Cname: '强军动态' },
+    { name: 'movie', Cname: '强军影视' }, { name: 'video', Cname: '练兵备战' }, { name: 'vlog', Cname: '创意视频' },
+]
+export const BASE = 'http://localhost:5000'
+export const BASE_VIDEO_ADDRESS = BASE + "/public/video/"

@@ -1,8 +1,9 @@
 import { Col, Row, Form, Input, Button, Select, message } from 'antd'
 import React, { Component, } from 'react'
+import DocumentTitle from 'react-document-title'
 import Footer from '../footer/Footer'
 import Header from '../header/Header'
-import { BASE_ALL_DEPARTMENT } from '../../consant/Consant'//定义了枚举的列表
+// import { BASE_ALL_DEPARTMENT } from '../../consant/Consant'//定义了枚举的列表
 import { reqAddMail } from '../../api'
 
 const { Item } = Form
@@ -33,44 +34,46 @@ class MailDetail extends Component {
     render() {
         //获取前段传来的值
         console.log(this.props.match.params.attr)
+        // const attr = this.props.match.params.attr
         return (
-            <>
-                <Header />
-                <Row>
-                    <Col span={16} offset={4} style={{ marginTop: 60 }}>
-                        <Form {...layout} name="basic"
-                            initialValues={{ leader: this.props.match.params.attr }}
-                            onFinish={this.onFinish}
-                            onFinishFailed={this.onFinishFailed}>
-                            <Item label='首长' name='leader' rules={[{ required: true, message: '请选择首长' }]}>
-                                <Select >
-                                    <Option value="zw">政委信箱</Option>
-                                    <Option value="zz">站长信箱</Option>
-                                    <Option value="zr">主任信箱</Option>
-                                    <Option value="jw">纪委信箱</Option>
-                                </Select>
-                            </Item>
+            <DocumentTitle title={'首长信箱'}>
+                <>
+                    <Header />
+                    <Row>
+                        <Col span={16} offset={4} style={{ marginTop: 60 }}>
+                            <Form {...layout} name="basic"
+                                initialValues={{ leader: this.props.match.params.attr }}
+                                onFinish={this.onFinish}
+                                onFinishFailed={this.onFinishFailed}>
+                                <Item label='首长' name='leader' rules={[{ required: true, message: '请选择首长' }]}>
+                                    <Select >
+                                        <Option value="zw">政委信箱</Option>
+                                        <Option value="zz">站长信箱</Option>
+                                        <Option value="zr">主任信箱</Option>
+                                        <Option value="jw">纪委信箱</Option>
+                                    </Select>
+                                </Item>
 
-                            <Item label="主题" name="title" rules={[{ required: true, message: '请输入邮件主题' }]} >
-                                <Input placeholder='请输入邮件主题' />
-                            </Item>
-                            <Item label="内容" name="content" rules={[{ required: true, message: '请输入邮件内容' }]} >
-                                <TextArea rows={6} placeholder='请输入邮件正文' />
-                            </Item>
-                            <Item label="单位" name="department"
-                                rules={[{ required: true, message: '请填写单位' },
-                                { type: "enum", enum: BASE_ALL_DEPARTMENT }]}>
-                                <Input placeholder='请输入单位' />
-                            </Item>
-                            <Item label="发信人" name="name" rules={[{ required: true, message: '请填写姓名' }]}>
-                                <Input placeholder='请输入姓名' />
-                            </Item>
-                            <Form.Item {...tailLayout}> <Button block type="primary" htmlType="submit">提交</Button> </Form.Item>
-                        </Form>
-                    </Col>
-                </Row>
-                <Footer />
-            </>
+                                <Item label="主题" name="title" rules={[{ required: true, message: '请输入邮件主题' }]} >
+                                    <Input placeholder='请输入邮件主题' />
+                                </Item>
+                                <Item label="内容" name="content" rules={[{ required: true, message: '请输入邮件内容' }]} >
+                                    <TextArea rows={6} placeholder='请输入邮件正文' />
+                                </Item>
+                                <Item label="单位" name="department"
+                                    rules={[{ message: '请填写单位' },]}>
+                                    <Input placeholder='选填' />
+                                </Item>
+                                <Item label="发信人" name="name" rules={[{ message: '请填写姓名' }]}>
+                                    <Input placeholder='选填' />
+                                </Item>
+                                <Form.Item {...tailLayout}> <Button block type="primary" htmlType="submit">提交</Button> </Form.Item>
+                            </Form>
+                        </Col>
+                    </Row>
+                    <Footer />
+                </>
+            </DocumentTitle>
         )
     }
 }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
+import DocumentTitle from 'react-document-title'
+import { NAV_LIST } from '../../consant/Consant'
 import { Row, Col, Table } from 'antd'
 import { actionCreators } from './store';
 import { connect } from 'react-redux';
@@ -20,55 +22,66 @@ class List extends Component {
     };
     componentDidMount() {
         this.props.getList(this.props.match.params.attr, this.state.current)
-        console.log(this.props)
     }
 
     render() {
         const MovieList = ['movie', 'video', 'vlog']
         const data = this.props.list.list//获取渲染的list
-        const currentAttr = this.props.match.params.attr//获取当前的attr来判断进入不同的detail界面
+        const currentAttr = this.props.match.params.attr;//获取当前的attr来判断进入不同的detail界面
+        //根据currentAttr来获取title显示的值
+        let result;
+        let i;
+        for (i = 0; i <= NAV_LIST.length; i++) {
+            if (NAV_LIST[i].name === currentAttr) {
+                result = NAV_LIST[i].Cname
+                break;
+            }
+        }
+
         const { total } = this.props.list.list //从后台反馈回来的数据中提取出total
         return (
-            <div>
-                <Header />
-                <div className='list-container'>
-                    <Row>
-                        <Col span={7} >
-                            <LeftNav attr={this.props.match.params.attr} updateList={this.props.getList} />
-                        </Col>
-                        <Col style={{ marginTop: 20 }} span={17}>
-                            <Table
-                                size={"middle"}
-                                showHeader={false}
-                                bordered={false}
-                                rowKey='_id'
-                                //分页的配置对象
-                                pagination={{
-                                    total,
-                                    defaultPageSize: 10,
-                                    showQuickJumper: true,
-                                    defaultCurrent: this.state.current,
-                                    onChange: this.onChange,//要传递一个参数选择是哪一页
-                                }}
-                                dataSource={data.list} >
-                                <Column
-                                    filtered={true}
-                                    key="action"
-                                    render={(item) => (
-                                        MovieList.indexOf(currentAttr) === -1 ?//三元表达式判断进入到哪一个详情界面
-                                            <Link target='_black' to={`/detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link> :
-                                            <Link target='_black' to={`/movie_detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link>
-                                    )}
-                                />
-                                <Column title='时间'
-                                    render={(item) => (<span style={{ float: "right" }}>{item.time}</span>)}
-                                />
-                            </Table>
-                        </Col>
-                    </Row>
+            <DocumentTitle title={result}>
+                <div>
+                    <Header />
+                    <div className='list-container'>
+                        <Row>
+                            <Col span={7} >
+                                <LeftNav attr={this.props.match.params.attr} updateList={this.props.getList} />
+                            </Col>
+                            <Col style={{ marginTop: 20 }} span={17}>
+                                <Table
+                                    size={"middle"}
+                                    showHeader={false}
+                                    bordered={false}
+                                    rowKey='_id'
+                                    //分页的配置对象
+                                    pagination={{
+                                        total,
+                                        defaultPageSize: 10,
+                                        showQuickJumper: true,
+                                        defaultCurrent: this.state.current,
+                                        onChange: this.onChange,//要传递一个参数选择是哪一页
+                                    }}
+                                    dataSource={data.list} >
+                                    <Column
+                                        filtered={true}
+                                        key="action"
+                                        render={(item) => (
+                                            MovieList.indexOf(currentAttr) === -1 ?//三元表达式判断进入到哪一个详情界面
+                                                <Link target='_black' to={`/detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link> :
+                                                <Link target='_black' to={`/movie_detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link>
+                                        )}
+                                    />
+                                    <Column title='时间'
+                                        render={(item) => (<span style={{ float: "right" }}>{item.time}</span>)}
+                                    />
+                                </Table>
+                            </Col>
+                        </Row>
+                    </div>
+                    <Footer />
                 </div>
-                <Footer />
-            </div>
+            </DocumentTitle>
         )
     }
     //通过此生命周期，拿到了更新后的attr值(实现了点击左边LeftNav的值实现了切换的效果)

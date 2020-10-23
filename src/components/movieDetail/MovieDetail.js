@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Row, Col, Card, List } from 'antd'
 import "../../../node_modules/video-react/dist/video-react.css";
 import { connect } from 'react-redux';
-import { BASE_VIDEO_ADDRESS } from '../../constant'
+import { BASE_VIDEO_ADDRESS } from '../../consant/Consant'
 import { actionCreators } from './store';
 import DetailHeader from '../header/DetailHeader'
 import Footer from '../footer/Footer'
