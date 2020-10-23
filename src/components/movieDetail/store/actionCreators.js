@@ -9,7 +9,7 @@ export const getDetail = (id) => {
 			console.log(result)
 			const action = {
 				type: GET_MOVIE_DETAIL,
-				name: result[0].name,
+				title: result[0].title,
 				url: result[0].url,
 			}
 			dispatch(action);

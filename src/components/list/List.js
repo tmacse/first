@@ -40,7 +40,7 @@ class List extends Component {
 
         const { total } = this.props.list.list //从后台反馈回来的数据中提取出total
         return (
-            <DocumentTitle title={result}>
+            <DocumentTitle title={`${result}的列表`} >
                 <div>
                     <Header />
                     <div className='list-container'>
@@ -81,7 +81,7 @@ class List extends Component {
                     </div>
                     <Footer />
                 </div>
-            </DocumentTitle>
+            </DocumentTitle >
         )
     }
     //通过此生命周期，拿到了更新后的attr值(实现了点击左边LeftNav的值实现了切换的效果)
