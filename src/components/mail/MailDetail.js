@@ -1,6 +1,7 @@
 import { Col, Row, Form, Input, Button, Select, message } from 'antd'
 import React, { Component, } from 'react'
 import DocumentTitle from 'react-document-title'
+import { LEADER_LIST } from '../../consant/Consant'
 import Footer from '../footer/Footer'
 import Header from '../header/Header'
 // import { BASE_ALL_DEPARTMENT } from '../../consant/Consant'//定义了枚举的列表
@@ -34,9 +35,18 @@ class MailDetail extends Component {
     render() {
         //获取前段传来的值
         console.log(this.props.match.params.attr)
+        //根据传递来的值确定title的值
+        let toptitle;
+        let i;
+        for (i = 0; i <= LEADER_LIST.length; i++) {
+            if (LEADER_LIST[i].abbr === this.props.match.params.attr) {
+                toptitle = LEADER_LIST[i].leader
+                break;
+            }
+        }
         // const attr = this.props.match.params.attr
         return (
-            <DocumentTitle title={'首长信箱'}>
+            <DocumentTitle title={`欢迎来到${toptitle}信箱`}>
                 <>
                     <Header />
                     <Row>

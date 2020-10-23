@@ -8,7 +8,7 @@ class Mid extends Component {
         const title = 'case'
         return (
             <div>
-                <Card hoverable title={<Link to={`/list/${title}`}>案列分析</Link>}>
+                <Card hoverable title={<Link target="_black" to={`/list/${title}`}>案列分析</Link>}>
                     <List
                         size="small"
                         bordered

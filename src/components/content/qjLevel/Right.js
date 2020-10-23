@@ -8,7 +8,7 @@ class Right extends Component {
     render() {
         const title = 'symposia'
         return (
-            <Card hoverable title={<Link to={`/list/${title}`}>活动概况</Link>}>
+            <Card hoverable title={<Link target="_black" to={`/list/${title}`}>活动概况</Link>}>
                 <Row>
                     <Col span={14}>
                         <Carousel >

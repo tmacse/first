@@ -9,5 +9,9 @@ export const NAV_LIST = [
     { name: 'symposia', Cname: '活动概况' }, { name: 'dynamic', Cname: '强军动态' },
     { name: 'movie', Cname: '强军影视' }, { name: 'video', Cname: '练兵备战' }, { name: 'vlog', Cname: '创意视频' },
 ]
+export const LEADER_LIST = [
+    { abbr: 'zz', leader: '站长' }, { abbr: 'zw', leader: '政委' },
+    { abbr: 'zr', leader: '主任' }, { abbr: 'jw', leader: '纪委' }
+]
 export const BASE = 'http://localhost:5000'
 export const BASE_VIDEO_ADDRESS = BASE + "/public/video/"
