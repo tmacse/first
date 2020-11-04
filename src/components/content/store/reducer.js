@@ -13,6 +13,7 @@ const defaultNewState = fromJS({
 	movielist: [],
 	videolist: [],
 	vloglist: [],
+	videoNewslist: [],
 })
 
 export default (state = defaultNewState, action) => {
@@ -31,6 +32,7 @@ export default (state = defaultNewState, action) => {
 				movielist: fromJS(action.movielist),
 				videolist: fromJS(action.videolist),
 				vloglist: fromJS(action.vloglist),
+				videoNewslist: fromJS(action.videoNewslist),
 			})
 		default:
 	}

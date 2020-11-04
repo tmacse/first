@@ -34,18 +34,20 @@ class Detail extends Component {
                             <Typography style={{ marginTop: 20, textAlign: "center" }}
                                 dangerouslySetInnerHTML={{ __html: content }}
                             />
-                            {//文件下载的路面
-                                download_url.map((item) => {
-                                    return (
-                                        <span>
-                                            教案下载地址：
-                                            <Typography.Link href={BASE_FILE_ADDRESS + item} alt='file'>
-                                                <span>
-                                                    {item}
-                                                </span>
-                                            </Typography.Link>
-                                        </span>)
-                                })
+                            {//文件下载的路面(判断是否有下载地址，来显示不同的内容)
+                                download_url !== undefined ?
+                                    download_url.map((item) => {
+                                        return (
+                                            <span>
+                                                教案下载地址：
+                                                <Typography.Link href={BASE_FILE_ADDRESS + item} alt='file'>
+                                                    <span>
+                                                        {item}
+                                                    </span>
+                                                </Typography.Link>
+                                            </span>)
+                                    }) :
+                                    '' //如果没有数据，则为空
                             }
                         </Col>
                     </Row>

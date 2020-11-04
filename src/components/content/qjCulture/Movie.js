@@ -21,7 +21,8 @@ class Movie extends Component {
                                     </Link>
                                 </div>
                             )
-                        })}
+                        })
+                        }
                     </Carousel>
                     <List
                         size="small"

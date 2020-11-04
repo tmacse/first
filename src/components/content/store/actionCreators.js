@@ -19,6 +19,7 @@ export const getHomeInfo = () => {
 				movielist: result.movielist,
 				videolist: result.videolist,
 				vloglist: result.vloglist,
+				videoNewslist: result.videoNewslist,
 			}
 			dispatch(action);
 		})
