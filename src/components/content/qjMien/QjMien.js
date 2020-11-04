@@ -1,3 +1,4 @@
+//这是一个强军风采的界面
 import React, { Component } from 'react'
 
 export default class QjMien extends Component {
