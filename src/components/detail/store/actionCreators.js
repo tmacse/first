@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { GET_DETAIL } from './actionTypes';
 
-//异步获得详情的界面（后台只是暂时定下了article和notice的组合）
+//异步获得详情的界面
 export const getDetail = (id) => {
 	return (dispatch) => {
 		axios.get('/ByID?_id=' + id).then((res) => {
@@ -12,7 +12,8 @@ export const getDetail = (id) => {
 				title: result[0].title,
 				content: result[0].content,
 				time: result[0].time,
-				department: result[0].department
+				department: result[0].department,
+				download_url: result[0].download_url,
 			}
 			dispatch(action);
 		})

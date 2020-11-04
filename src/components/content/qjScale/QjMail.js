@@ -16,16 +16,25 @@ export default class QjMail extends Component {
 
                     </Col>
                     <Col className="commissioner-mail" span={6}>
-                        <MailOutlined />
-                        <span className="mail-text">政委信箱</span>
+                        <Link to='/mail/zw'>
+                            <MailOutlined />
+                            <span className="mail-text">政委信箱</span>
+                        </Link>
+
                     </Col>
                     <Col className="officer-mail" span={6}>
-                        <MailOutlined />
-                        <span className="mail-text">主任信箱</span>
+                        <Link to='/mail/zr'>
+                            <MailOutlined />
+                            <span className="mail-text">主任信箱</span>
+                        </Link>
+
                     </Col>
                     <Col className="discipline-mail" span={6}>
-                        <MailOutlined />
-                        <span className="mail-text">纪委信箱</span>
+                        <Link to='/mail/jw'>
+                            <MailOutlined />
+                            <span className="mail-text">纪委信箱</span>
+                        </Link>
+
                     </Col>
                 </Row>
             </div>

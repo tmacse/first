@@ -5,6 +5,7 @@ const defaultDetailState = fromJS({
 	content: '',
 	time: '',
 	department: '',
+	download_url: [],
 })
 
 export default (state = defaultDetailState, action) => {
@@ -14,7 +15,8 @@ export default (state = defaultDetailState, action) => {
 				title: fromJS(action.title),
 				content: fromJS(action.content),
 				time: fromJS(action.time),
-				department: fromJS(action.department)
+				department: fromJS(action.department),
+				download_url: fromJS(action.download_url)
 			})
 
 		default:
