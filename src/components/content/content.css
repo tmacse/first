@@ -53,23 +53,27 @@ a.ant-typography,
 .ant-typography a {
   color: rgba(0, 0, 0, 0.65);
 }
-
-/* a:hover {
-    color: #D0151C;
-} */
-
-/* a:visited {
-    color: yellow;
-} */
-
 .nav {
   height: 300px;
 }
-
+.newsIcon{
+  z-index: 90;
+  font-size: 20px;
+   position: absolute;
+   overflow: hidden;
+   color: #f5f8f8;
+   right:3%;
+   top:8%;
+   transition: 0.25s;
+}
+.newsIcon :hover{
+  transform: translateZ(-10px) scale(1.05);
+}
 .video {
   width: 700px;
   height: 300px;
   padding-top: 43.1%;
+  z-index: 10;
 }
 
 .video-detail {

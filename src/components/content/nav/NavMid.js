@@ -1,22 +1,28 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 // import { BASE_VIDEO_ADDRESS } from '../../../consant/Consant'
 import "../../../../node_modules/video-react/dist/video-react.css";
 import { Player, BigPlayButton } from 'video-react'
+import { MenuUnfoldOutlined } from '@ant-design/icons';
 const path = require('path');
+
 
 class NavMid extends Component {
     render() {
-        // console.log('新闻', this.props.list)
-        // const url = this.props.url
+
         return (
             <>
+                <Link to='/list/newsMovie'>
+                    <MenuUnfoldOutlined className='newsIcon' />
+                </Link>
                 {//从后台取到数据，通过redux传递到前段界面，获得视频地址
                     this.props.list.map((item) => {
                         const url = path.join('/public/video', item.get('url').get(0))
                         console.log('111', url)
                         return (
                             <Player
+                                key={item.get('url').get(0)}
                                 fluid={false}
                                 width="800px"
                                 playsInline
@@ -27,9 +33,7 @@ class NavMid extends Component {
                             </Player>
                         )
                     })
-
                 }
-
             </>
         )
     }

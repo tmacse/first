@@ -7,7 +7,8 @@ export const NAV_LIST = [
     { name: 'index', Cname: '首页' }, { name: 'notices', Cname: '通知公告' },
     { name: 'curriculum', Cname: '精品课程' }, { name: 'case', Cname: '案例分析' },
     { name: 'symposia', Cname: '活动概况' }, { name: 'dynamic', Cname: '强军动态' },
-    { name: 'movie', Cname: '强军影视' }, { name: 'video', Cname: '练兵备战' }, { name: 'vlog', Cname: '创意视频' },
+    { name: 'movie', Cname: '强军影视' }, { name: 'video', Cname: '练兵备战' },
+    { name: 'vlog', Cname: '创意视频' }, { name: 'newsMovie', Cname: '强军新闻' }
 ]
 export const LEADER_LIST = [
     { abbr: 'zz', leader: '站长' }, { abbr: 'zw', leader: '政委' },
@@ -15,4 +16,4 @@ export const LEADER_LIST = [
 ]
 export const BASE = 'http://localhost:5000'
 export const BASE_VIDEO_ADDRESS = BASE + "/public/video/"
-export const BASE_FILE_ADDRESS = BASE+"/public/file/"
+export const BASE_FILE_ADDRESS = BASE + "/public/file/"

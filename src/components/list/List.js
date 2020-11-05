@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import Header from '../header/Header'
 import Footer from '../footer/Footer'
 import DocumentTitle from 'react-document-title'
-import { NAV_LIST } from '../../consant/Consant'
-import { Row, Col, Table } from 'antd'
+import { NAV_LIST, BASE_VIDEO_ADDRESS } from '../../consant/Consant'
+import { Row, Col, Table, Card } from 'antd'
 import { actionCreators } from './store';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
@@ -25,7 +25,7 @@ class List extends Component {
     }
 
     render() {
-        const MovieList = ['movie', 'video', 'vlog']
+        const MovieList = ['movie', 'video', 'vlog', 'newsMovie']
         const data = this.props.list.list//获取渲染的list
         const currentAttr = this.props.match.params.attr;//获取当前的attr来判断进入不同的detail界面
         //根据currentAttr来获取title显示的值
@@ -49,33 +49,54 @@ class List extends Component {
                                 <LeftNav attr={this.props.match.params.attr} updateList={this.props.getList} />
                             </Col>
                             <Col style={{ marginTop: 20 }} span={17}>
-                                <Table
-                                    size={"middle"}
-                                    showHeader={false}
-                                    bordered={false}
-                                    rowKey='_id'
-                                    //分页的配置对象
-                                    pagination={{
-                                        total,
-                                        defaultPageSize: 10,
-                                        showQuickJumper: true,
-                                        defaultCurrent: this.state.current,
-                                        onChange: this.onChange,//要传递一个参数选择是哪一页
-                                    }}
-                                    dataSource={data.list} >
-                                    <Column
-                                        filtered={true}
-                                        key="action"
-                                        render={(item) => (
-                                            MovieList.indexOf(currentAttr) === -1 ?//三元表达式判断进入到哪一个详情界面
-                                                <Link target='_black' to={`/detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link> :
-                                                <Link target='_black' to={`/movie_detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link>
-                                        )}
-                                    />
-                                    <Column title='时间'
-                                        render={(item) => (<span style={{ float: "right" }}>{item.time}</span>)}
-                                    />
-                                </Table>
+                                {
+                                    MovieList.indexOf(currentAttr) === -1 ?
+                                        <Table
+                                            size={"middle"}
+                                            showHeader={false}
+                                            bordered={false}
+                                            rowKey='_id'
+                                            //分页的配置对象
+                                            pagination={{
+                                                total,
+                                                defaultPageSize: 10,
+                                                showQuickJumper: true,
+                                                defaultCurrent: this.state.current,
+                                                onChange: this.onChange,//要传递一个参数选择是哪一页
+                                            }}
+                                            dataSource={data.list} >
+                                            <Column
+                                                filtered={true}
+                                                key="action"
+                                                render={(item) => (
+                                                    <Link target='_black' to={`/detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link>
+                                                )}
+                                            />
+                                            <Column title='时间'
+                                                render={(item) => (<span style={{ float: "right" }}>{item.time}</span>)}
+                                            />
+                                        </Table>
+                                        : <Card title={`${result}的列表`}>
+                                            {data.list !== undefined ?
+                                                data.list.map((item) => {
+                                                    const url = BASE_VIDEO_ADDRESS + item.url
+                                                    return (
+                                                        <>
+                                                            <Link target='_black' to={`/movie_detail/${item._id}`}>
+                                                                <Card
+                                                                    hoverable
+                                                                    style={{ width: 160, float: "left" }}
+                                                                    cover={<video className='videoPic' alt="example" src={url} />}
+                                                                >
+                                                                    <Card.Meta title={item.title} description={item.desc} />
+                                                                </Card>
+                                                            </Link>
+                                                        </>)
+                                                })
+                                                : ''
+                                            }
+                                        </Card>
+                                }
                             </Col>
                         </Row>
                     </div>
