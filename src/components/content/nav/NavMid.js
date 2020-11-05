@@ -13,13 +13,12 @@ class NavMid extends Component {
 
         return (
             <>
-                <Link to='/list/newsMovie'>
+                <Link target='_black' to='/list/newsMovie'>
                     <MenuUnfoldOutlined className='newsIcon' />
                 </Link>
                 {//从后台取到数据，通过redux传递到前段界面，获得视频地址
                     this.props.list.map((item) => {
                         const url = path.join('/public/video', item.get('url').get(0))
-                        console.log('111', url)
                         return (
                             <Player
                                 key={item.get('url').get(0)}

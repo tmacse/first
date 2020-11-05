@@ -76,7 +76,7 @@ class MovieDetail extends Component {
                     </Row>
                     <Footer />
                 </div>
-            </DocumentTitle >
+            </DocumentTitle>
         )
     }
     componentDidMount() {
