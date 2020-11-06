@@ -102,7 +102,7 @@ class List extends Component {
                     </div>
                     <Footer />
                 </div>
-            </DocumentTitle >
+            </DocumentTitle>
         )
     }
     //通过此生命周期，拿到了更新后的attr值(实现了点击左边LeftNav的值实现了切换的效果)

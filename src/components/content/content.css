@@ -1,7 +1,57 @@
 /* a{
   color:#555555;
 } */
-
+.navleft-icon{
+  float: left;
+  font-size: larger;
+  margin-left: 30px;
+  line-height: 45px;
+}
+.navleft-span{
+  display: block;
+  margin-left: 100px;
+}
+.navleft-1{
+  height:40px;
+  background-color:#538CB7;
+  /* text-align: center; */
+  text-align: left;
+  line-height: 40px;
+  color: white;
+  position: absolute;
+  margin-top: 110px;
+  width:100%;
+}
+.navleft-2 {
+  height: 40px;
+  background-color: #6b629A;
+  text-align: left;
+  line-height: 40px;
+  color: white;
+  position: absolute;
+  margin-top: 160px;
+  width: 100%;
+}
+.navleft-3 {
+  height: 40px;
+  background-color: #EA8700;
+  text-align: left;
+  line-height: 40px;
+  color: white;
+  position: absolute;
+  margin-top: 210px;
+  width: 100%;
+}
+.navleft-4 {
+  height: 40px;
+  background-color: #E55F0b;
+  text-align: left;
+  line-height: 40px;
+  color: white;
+  position: absolute;
+  margin-top: 260px;
+  width: 100%;
+}
 .detail-left-ul {
   display: block;
   list-style-type: disc;

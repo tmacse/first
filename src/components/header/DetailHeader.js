@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Menu, Row, Col, Divider } from 'antd';
 const { SubMenu } = Menu;
 
-
 export default class DetailHeader extends Component {
     state = {
         current: 'mail',
@@ -28,11 +27,11 @@ export default class DetailHeader extends Component {
                                 <Menu.Item><Link target='_black' to='/list/symposia'>活动概况</Link></Menu.Item>
                             </SubMenu>
                             <SubMenu title='强军动态'>
-                                <Menu.Item>部队管理办</Menu.Item>
-                                <Menu.Item>战勤办</Menu.Item>
-                                <Menu.Item>组织办</Menu.Item>
-                                <Menu.Item>宣传保卫办</Menu.Item>
-                                <Menu.Item>人力资源办</Menu.Item>
+                                <Menu.Item><Link target='_black' to='/dynamiclist/goverment'>部队管理办</Link></Menu.Item>
+                                <Menu.Item><Link target='_black' to='/dynamiclist/train'>战勤办</Link></Menu.Item>
+                                <Menu.Item><Link target='_black' to='/dynamiclist/organization'>组织办</Link></Menu.Item>
+                                <Menu.Item><Link target='_black' to='/dynamiclist/propagation'>宣传保卫办</Link></Menu.Item>
+                                <Menu.Item><Link target='_black' to='/dynamiclist/manpower'>人力资源办</Link></Menu.Item>
                             </SubMenu>
                             <SubMenu title='强军文化'>
                                 <Menu.Item><Link target='_black' to='/list/movie'>强军影视</Link></Menu.Item>

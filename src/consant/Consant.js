@@ -10,6 +10,19 @@ export const NAV_LIST = [
     { name: 'movie', Cname: '强军影视' }, { name: 'video', Cname: '练兵备战' },
     { name: 'vlog', Cname: '创意视频' }, { name: 'newsMovie', Cname: '强军新闻' }
 ]
+export const NAV_DEPARTMENT_LIST = [
+    { name: 'index', Cname: '首页' },
+    { name: 'dynamic', Cname: '强军动态' },
+    { name: 'goverment', Cname: '部队管理办' },
+    { name: 'train', Cname: '战勤办' },
+    { name: 'organization', Cname: '组织办' },
+    { name: 'manpower', Cname: '人力资源办' },
+    { name: 'propagation', Cname: '宣传保卫办' },
+]
+
+export const DEPARTMENGT = [
+    'goverment', 'manpower', 'organization', 'propagation', 'train'
+]
 export const LEADER_LIST = [
     { abbr: 'zz', leader: '站长' }, { abbr: 'zw', leader: '政委' },
     { abbr: 'zr', leader: '主任' }, { abbr: 'jw', leader: '纪委' }

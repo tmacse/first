@@ -9,6 +9,7 @@ import MovieDetail from './components/movieDetail/MovieDetail'
 import ScrollToTop from './components/ScrollToTop';
 import MailDetail from './components/mail/MailDetail';
 import Success from './components/success/Success';
+import DynamicList from './components/list/DynamicList';
 function App() {
   return (
     <Provider store={store}>
@@ -17,6 +18,7 @@ function App() {
           <ScrollToTop>
             <Route path="/" component={Home} exact />
             <Route path='/list/:attr' component={List} exact />
+            <Route path='/dynamiclist/:attr' component={DynamicList} exact></Route>
             <Route path='/detail/:_id' component={Detail} exact />
             <Route path='/movie_detail/:id' component={MovieDetail} exact />
             <Route path='/mail/:attr' component={MailDetail}></Route>

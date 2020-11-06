@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 
 class Organization extends Component {
     render() {
+        const title = 'organization'
         return (
             <div>
-                <Card title="组织办" hoverable className="my-card">
+                <Card title={<Link to={`/dynamiclist/${title}`}>组织办</Link>} hoverable className="my-card">
                     <List
                         size="small"
                         bordered

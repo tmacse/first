@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 
 class Propagation extends Component {
     render() {
+        const title = 'propagation'
         return (
             <div>
-                <Card title="宣传保卫办" hoverable className="my-card">
+                <Card title={<Link to={`/dynamiclist/${title}`}>宣传保卫办</Link>} hoverable className="my-card">
                     <List
                         size="small"
                         bordered
