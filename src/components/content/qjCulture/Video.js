@@ -9,7 +9,7 @@ class Video extends Component {
         const title = 'video'
         return (
             <div>
-                <Card hoverable className="movie-card" title={<Link to={`/list/${title}`}>练兵备战</Link>}>
+                <Card hoverable className="movie-card" title={<Link to={`/${title}/list`}>练兵备战</Link>}>
                     <Carousel effect="fade" autoplay>
                         {this.props.list.map((item) => {
                             const url = path.join('/public/video', item.get('url').get(0))

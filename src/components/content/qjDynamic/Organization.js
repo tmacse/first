@@ -8,7 +8,7 @@ class Organization extends Component {
         const title = 'organization'
         return (
             <div>
-                <Card title={<Link to={`/dynamiclist/${title}`}>组织办</Link>} hoverable className="my-card">
+                <Card title={<Link to={`/${title}/dynamiclist`}>组织办</Link>} hoverable className="my-card">
                     <List
                         size="small"
                         bordered

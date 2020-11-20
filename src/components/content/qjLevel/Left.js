@@ -9,7 +9,7 @@ class Left extends Component {
         const title = 'curriculum'
         return (
             <div>
-                <Card hoverable title={<Link target="_black" to={`/list/${title}`}>精品课程</Link>}>
+                <Card hoverable title={<Link target="_black" to={`/${title}/list`}>精品课程</Link>}>
                     <List
                         size="small"
                         bordered

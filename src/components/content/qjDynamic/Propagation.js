@@ -8,7 +8,7 @@ class Propagation extends Component {
         const title = 'propagation'
         return (
             <div>
-                <Card title={<Link to={`/dynamiclist/${title}`}>宣传保卫办</Link>} hoverable className="my-card">
+                <Card title={<Link to={`/${title}/dynamiclist`}>宣传保卫办</Link>} hoverable className="my-card">
                     <List
                         size="small"
                         bordered

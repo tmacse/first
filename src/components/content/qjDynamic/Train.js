@@ -8,7 +8,7 @@ class Train extends Component {
         const title = 'train'
         return (
             <div>
-                <Card title={<Link to={`/dynamiclist/${title}`}>战勤办</Link>} hoverable className="my-card">
+                <Card title={<Link to={`/${title}/dynamiclist`}>战勤办</Link>} hoverable className="my-card">
                     <List
                         size="small"
                         bordered

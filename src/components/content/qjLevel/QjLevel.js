@@ -11,7 +11,7 @@ class QjLevel extends Component {
         return (
             <div className='qj-level'>
 
-                <Link to='/list/curriculum'>
+                <Link to='/curriculum/list'>
                     <div className='tangle hoverable'>
                         {/* <img  /> */}
                         <span>强军阶梯</span>

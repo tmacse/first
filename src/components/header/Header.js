@@ -32,7 +32,7 @@ class Header extends Component {
                     <div>
                         <h3 style={contentStyle}><img alt="1" src={require('../../img/background.png')} /></h3>
                     </div>
-                    <div>
+                    {/* <div>
                         <h3 style={contentStyle}>2</h3>
                     </div>
                     <div>
@@ -40,7 +40,7 @@ class Header extends Component {
                     </div>
                     <div>
                         <h3 style={contentStyle}>4</h3>
-                    </div>
+                    </div> */}
 
                 </Carousel>
                 <div>
@@ -48,8 +48,10 @@ class Header extends Component {
                     <RightOutlined onClick={this.next} className='flex-right' />
                 </div>
                 <Button type="primary" className='header-icon' danger>
-                    <FormOutlined />
-                    <span>投稿</span>
+                    <a target='_black' href='http://28.28.40.77:5000'>
+                        <FormOutlined />
+                        <span>投稿</span>
+                    </a>
                 </Button>
                 <img alt="1" className="font-logo" src={require('../../img/font-logo.png')} />
             </div>

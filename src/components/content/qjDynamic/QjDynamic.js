@@ -16,7 +16,7 @@ class QjDynamic extends Component {
         return (
             <div className='qj-level'>
                 <div className='tangle hoverable'>
-                    <span><Link to={`/list/${title}`}>强军动态</Link></span>
+                    <span><Link to={`/${title}/list`}>强军动态</Link></span>
                 </div>
                 <Row style={{ marginTop: "10px", height: "233px" }}>
                     <Col flex={1}>

@@ -10,7 +10,7 @@ class QjCulture extends Component {
         return (
             <div className='qj-level'>
                 <div className='tangle hoverable'>
-                    <Link target='_black' to='/list/movie'>
+                    <Link target='_black' to='/movie/list'>
                         {/* <img  /> */}
                         <span>强军文化</span></Link>
                 </div>

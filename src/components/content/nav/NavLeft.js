@@ -17,7 +17,7 @@ class NavLeft extends Component {
                     </div>
                 </Link>
 
-                <Link target='_black' to='/list/movie'>
+                <Link target='_black' to='/movie/list'>
                     <div className='navleft-2'>
                         <YoutubeOutlined className='navleft-icon' />
                         <span className='navleft-span'>精品视频观看</span>

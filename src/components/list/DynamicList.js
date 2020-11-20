@@ -14,6 +14,7 @@ const { Column } = Table;
 class DynamicList extends Component {
     state = {
         current: 1,
+        // total: 0
     };
     //通过配置OnChange实现了切换页数，随时更新页面内容的效果
     onChange = page => {
@@ -66,7 +67,7 @@ class DynamicList extends Component {
                                         filtered={true}
                                         key="action"
                                         render={(item) => (
-                                            <Link target='_black' to={`/detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link>
+                                            <Link style={{ color: 'black' }} target='_black' to={`/detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link>
                                         )}
                                     />
                                     <Column title='时间'

@@ -69,7 +69,7 @@ class List extends Component {
                                                 filtered={true}
                                                 key="action"
                                                 render={(item) => (
-                                                    <Link target='_black' to={`/detail/${item._id}`}> <span className='newslist-a'></span> {item.title}</Link>
+                                                    <Link target='_black' to={`/detail/${item._id}`}> <span className='newslist-a B'>{item.title}</span> </Link>
                                                 )}
                                             />
                                             <Column title='时间'

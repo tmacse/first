@@ -14,8 +14,8 @@ class LeftNav extends Component {
                     {NAV_DEPARTMENT_LIST.map((item) => (
                         <li key={item.name} className={item.name === head ? 'awalys' : 'detail-left-li'}>
                             {item.name === 'index' ?
-                                <NavLink to='/'>{item.Cname}</NavLink> :
-                                <NavLink to={`/dynamiclist/${item.name}`}>{item.Cname}</NavLink>}
+                                <NavLink to='/'><span className='B'>{item.Cname}</span></NavLink> :
+                                <NavLink to={`/${item.name}/dynamiclist`}><span className={item.name === head ? 'W' : 'B'}>{item.Cname}</span></NavLink>}
                         </li>
                     ))}
                 </ul>
@@ -24,8 +24,8 @@ class LeftNav extends Component {
                     {NAV_LIST.map((item) => (
                         <li key={item.name} className={item.name === head ? 'awalys' : 'detail-left-li'}>
                             {item.name === 'index' ?
-                                <NavLink to='/'>{item.Cname}</NavLink> :
-                                <NavLink to={`/list/${item.name}`}>{item.Cname}</NavLink>}
+                                <NavLink to='/'><span className='B'>{item.Cname}</span></NavLink> :
+                                <NavLink to={`/${item.name}/list`}><span className={item.name === head ? 'W' : 'B'}>{item.Cname}</span></NavLink>}
                         </li>
                     ))}
                 </ul>

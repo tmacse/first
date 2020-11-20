@@ -17,8 +17,8 @@ function App() {
         <BrowserRouter>
           <ScrollToTop>
             <Route path="/" component={Home} exact />
-            <Route path='/list/:attr' component={List} exact />
-            <Route path='/dynamiclist/:attr' component={DynamicList} exact></Route>
+            <Route path='/:attr/list' component={List} exact />
+            <Route path='/:attr/dynamiclist' component={DynamicList} exact></Route>
             <Route path='/detail/:_id' component={Detail} exact />
             <Route path='/movie_detail/:id' component={MovieDetail} exact />
             <Route path='/mail/:attr' component={MailDetail}></Route>

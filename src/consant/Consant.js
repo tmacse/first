@@ -27,6 +27,6 @@ export const LEADER_LIST = [
     { abbr: 'zz', leader: '站长' }, { abbr: 'zw', leader: '政委' },
     { abbr: 'zr', leader: '主任' }, { abbr: 'jw', leader: '纪委' }
 ]
-export const BASE = 'http://localhost:5000'
+export const BASE = 'http://28.27.40.77'
 export const BASE_VIDEO_ADDRESS = BASE + "/public/video/"
 export const BASE_FILE_ADDRESS = BASE + "/public/file/"

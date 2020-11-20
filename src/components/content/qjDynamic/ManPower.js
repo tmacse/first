@@ -8,7 +8,7 @@ class ManPower extends Component {
         const title = 'manpower'
         return (
             <div>
-                <Card title={<Link to={`/dynamiclist/${title}`}>人力资源办</Link>} hoverable className="my-card">
+                <Card title={<Link to={`/${title}/dynamiclist`}>人力资源办</Link>} hoverable className="my-card">
                     <List
                         size="small"
                         bordered

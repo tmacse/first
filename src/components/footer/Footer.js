@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './footer.css'
 import { Row, Col } from 'antd'
-import { RightOutlined, PhoneOutlined, MailOutlined, EnvironmentOutlined } from '@ant-design/icons';
-
+import { RightOutlined, PhoneOutlined, EnvironmentOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 class Footer extends Component {
     render() {
@@ -18,20 +18,29 @@ class Footer extends Component {
                             <span className="yellow" />
                             <span style={{ "fontSize": "16px", "fontWeight": "bold" }}>发现更多</span>
                             <div className='foot-to-top'>
-                                <RightOutlined />
-                                <span className="padding-left">强军阶梯</span>
+                                <Link to='/curriculum/list'>
+                                    <RightOutlined />
+                                    <span className="padding-left">强军阶梯</span>
+                                </Link>
+
                             </div>
                             <div className='foot-to-top'>
-                                <RightOutlined />
-                                <span className="padding-left">强军动态</span>
+                                <Link to='/dynamic/list'>
+                                    <RightOutlined />
+                                    <span className="padding-left">强军动态</span>
+                                </Link>
                             </div>
                             <div className='foot-to-top'>
-                                <RightOutlined />
-                                <span className="padding-left">强军文化</span>
+                                <Link to='/movie/list'>
+                                    <RightOutlined />
+                                    <span className="padding-left">强军文化</span>
+                                </Link>
                             </div>
                             <div className='foot-to-top'>
-                                <RightOutlined />
-                                <span className="padding-left">强军天平</span>
+                                <Link to='/mail/zw'>
+                                    <RightOutlined />
+                                    <span className="padding-left">强军天平</span>
+                                </Link>
                             </div>
                         </div>
                     </Col>
@@ -43,10 +52,7 @@ class Footer extends Component {
                                 <PhoneOutlined />
                                 <span className="padding-left">0817-368730</span>
                             </div>
-                            <div className='foot-to-top-center'>
-                                <MailOutlined />
-                                <span className="padding-left">强军动态</span>
-                            </div>
+
                             <div className='foot-to-top-center'>
                                 <EnvironmentOutlined />
                                 <span className="padding-left">四川省南充市高坪区</span>

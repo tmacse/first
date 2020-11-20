@@ -10,8 +10,8 @@ class NavRight extends Component {
         return (
             <Card style={{ height: "300px" }}>
                 <div className="junwang">
-                    <Link to={`/list/${title}`}>
-                        <span style={{ marginLeft: "10px" }}>通知公告</span>
+                    <Link to={`/${title}/list`}>
+                        <span style={{ marginLeft: "10px", color: 'black' }}>通知公告</span>
                     </Link>
                 </div>
                 <Divider />

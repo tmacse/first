@@ -1,6 +1,9 @@
-/* a{
-  color:#555555;
-} */
+a{
+  color:whitesmoke;
+}
+.black{
+  color:black;
+}
 .navleft-icon{
   float: left;
   font-size: larger;

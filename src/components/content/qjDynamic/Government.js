@@ -8,7 +8,7 @@ class Government extends Component {
         const title = 'goverment'
         return (
             <div>
-                <Card hoverable title={<Link to={`/dynamiclist/${title}`}>部队管理办</Link>} className="my-card">
+                <Card hoverable title={<Link to={`/${title}/dynamiclist`}>部队管理办</Link>} className="my-card">
                     <List
                         size="small"
                         bordered
