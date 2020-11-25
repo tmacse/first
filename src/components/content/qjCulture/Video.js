@@ -29,7 +29,9 @@ class Video extends Component {
                         renderItem={item => <List.Item id={item.get('_id')}>
                             <Typography.Text ellipsis="true">
                                 <Link target="_black" to={`/movie_detail/${item.get('_id')}`}>{item.get('title')}</Link>
-                            </Typography.Text></List.Item>}>
+                            </Typography.Text>
+                            <span style={{ float: 'right' }}>{item.get('director')}</span>
+                        </List.Item>}>
                     </List>
                 </Card>
             </div>

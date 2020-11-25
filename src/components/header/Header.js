@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './header.css'
 import { Carousel, Button } from 'antd';
 import { FormOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const contentStyle = {
     height: '250px',
@@ -48,12 +49,15 @@ class Header extends Component {
                     <RightOutlined onClick={this.next} className='flex-right' />
                 </div>
                 <Button type="primary" className='header-icon' danger>
-                    <a target='_black' href='http://28.28.40.77:5000'>
+                    <a target='_black' href='http://28.27.40.77:5000'>
                         <FormOutlined />
                         <span>投稿</span>
                     </a>
                 </Button>
-                <img alt="1" className="font-logo" src={require('../../img/font-logo.png')} />
+                <Link to='/'>
+                    <img alt="1" className="font-logo" src={require('../../img/font-logo.png')} />
+                </Link>
+
             </div>
 
 

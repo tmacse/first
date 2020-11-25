@@ -3,6 +3,10 @@ import { GET_MOVIE_DETAIL } from './actionTypes';
 const defaultDetailState = fromJS({
 	title: '',
 	url: '',
+	director: '',
+	main_actor: '',
+	desc: '',
+	attr: '',
 })
 
 export default (state = defaultDetailState, action) => {
@@ -11,6 +15,10 @@ export default (state = defaultDetailState, action) => {
 			return state.merge({
 				title: fromJS(action.title),
 				url: fromJS(action.url),
+				director: fromJS(action.director),
+				main_actor: fromJS(action.main_actor),
+				desc: fromJS(action.desc),
+				attr: fromJS(action.attr),
 			})
 
 		default:

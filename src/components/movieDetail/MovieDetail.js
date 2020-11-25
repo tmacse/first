@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, Card, List } from 'antd'
+import { Row, Col, Card, Descriptions } from 'antd'
 import "../../../node_modules/video-react/dist/video-react.css";
 import { connect } from 'react-redux';
 import DocumentTitle from 'react-document-title'
@@ -10,14 +10,6 @@ import Footer from '../footer/Footer'
 import { Player, BigPlayButton } from 'video-react'
 
 // const path = require('path');
-
-const data = [
-    'Racing car sprays burning fuel into crowd.',
-    'Japanese princess to wed commoner.',
-    'Australian walks 100km after outback crash.',
-    'Man charged over missing wedding girl.',
-    'Los Angeles battles huge wildfires.',
-];
 
 class MovieDetail extends Component {
     render() {
@@ -49,28 +41,13 @@ class MovieDetail extends Component {
                             }
                         </Col>
                         <Col span={4}>
-
                             <Card className="video-recommend">
-                                <List
-                                    itemLayout="horizontal"
-                                    dataSource={data}
-                                    extra={
-                                        <img
-                                            width={272}
-                                            alt="logo"
-                                            src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-                                        />
-                                    }
-                                    renderItem={item => (
-                                        <List.Item>
-                                            <List.Item.Meta
-                                                title={<a href="https://ant.design">{item.title}</a>}
-                                                description="Ant Design, a design language "
-                                            />
-
-                                        </List.Item>
-                                    )}
-                                />
+                                <Descriptions layout='horizontal' title="视频介绍">
+                                    <Descriptions.Item span={4} label="视频名">{this.props.name}</Descriptions.Item>
+                                    <Descriptions.Item span={4} label="导演">{this.props.director}</Descriptions.Item>
+                                    <Descriptions.Item span={4} label="主要演员">{this.props.main_actor}</Descriptions.Item>
+                                    <Descriptions.Item span={4} label="简介">{this.props.desc}</Descriptions.Item>
+                                </Descriptions>
                             </Card>
                         </Col>
                     </Row>
@@ -87,6 +64,10 @@ class MovieDetail extends Component {
 const mapStateToProps = (state) => ({
     name: state.get('moviedetail').get('title'),
     url: state.getIn(['moviedetail', 'url']),
+    director: state.getIn(['moviedetail', 'director']),
+    main_actor: state.getIn(['moviedetail', 'main_actor']),
+    desc: state.getIn(['moviedetail', 'desc']),
+    attr: state.getIn(['moviedetail', 'attr']),
 
 })
 const mapDispatchToProps = (dispatch) => ({
