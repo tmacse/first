@@ -19,26 +19,26 @@ export default class DetailHeader extends Component {
                     <Col span={18} offset={3}>
                         <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
                             <Menu.Item>
-                                <Link target='_black' to='/newsMovie/list'>新闻联播</Link>
+                                <Link target='_black' to='/newsMovie/list'><h2>新闻联播</h2></Link>
                             </Menu.Item>
-                            <SubMenu title='强军阶梯'>
+                            <SubMenu title={<h2>强军阶梯</h2>}>
                                 <Menu.Item><Link target='_black' to='/curriculum/list'>精品课程</Link></Menu.Item>
                                 <Menu.Item><Link target='_black' to='/case/list'>案例分析</Link></Menu.Item>
                                 <Menu.Item><Link target='_black' to='/symposia/list'>活动概况</Link></Menu.Item>
                             </SubMenu>
-                            <SubMenu title='强军动态'>
+                            <SubMenu title={<h2>强军动态</h2>}>
                                 <Menu.Item><Link target='_black' to='/goverment/dynamiclist'>部队管理办</Link></Menu.Item>
                                 <Menu.Item><Link target='_black' to='/train/dynamiclist'>战勤办</Link></Menu.Item>
                                 <Menu.Item><Link target='_black' to='/organization/dynamiclist'>组织办</Link></Menu.Item>
                                 <Menu.Item><Link target='_black' to='/propagation/dynamiclist'>宣传保卫办</Link></Menu.Item>
                                 <Menu.Item><Link target='_black' to='/manpower/dynamiclist'>人力资源办</Link></Menu.Item>
                             </SubMenu>
-                            <SubMenu title='强军文化'>
+                            <SubMenu title={<h2>强军文化</h2>}>
                                 <Menu.Item><Link target='_black' to='/movie/list'>强军影视</Link></Menu.Item>
                                 <Menu.Item><Link target='_black' to='/video/list'>练兵备战</Link></Menu.Item>
                                 <Menu.Item><Link target='_black' to='/vlog/list'>创意视频</Link></Menu.Item>
                             </SubMenu>
-                            <SubMenu title='强军天平'>
+                            <SubMenu title={<h2>强军天平</h2>}>
                                 <Menu.Item><Link target='_black' to='/mail/zz'>站长信箱</Link></Menu.Item>
                                 <Menu.Item><Link target='_black' to='/mail/zw'>政委信箱</Link></Menu.Item>
                                 <Menu.Item><Link target='_black' to='/mail/zr'>主任信箱</Link></Menu.Item>

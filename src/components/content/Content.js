@@ -19,7 +19,7 @@ class Content extends Component {
                 <QjLevel />
                 <Banner />
                 <QjDynamic />
-                <Banner />
+                {/* <Banner /> */}
                 <QjCulture />
                 <QjMien />
                 <QjScale />

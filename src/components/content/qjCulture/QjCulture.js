@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 class QjCulture extends Component {
     render() {
         return (
-            <div className='qj-level'>
+            <div className='qj-level' style={{ marginTop: 50 }}>
                 <div className='tangle hoverable'>
                     <Link target='_black' to='/movie/list'>
                         {/* <img  /> */}

@@ -138,7 +138,7 @@ a.ant-typography,
 
 .video-recommend {
   /* border: 1px solid red; */
-  height: 450px;
+  min-height: 450px;
   /* background-color: #444444; */
 }
 

@@ -8,6 +8,7 @@ import { actionCreators } from './store';
 import DetailHeader from '../header/DetailHeader'
 import Footer from '../footer/Footer'
 import { Player, BigPlayButton } from 'video-react'
+// import Header from '../header/Header';
 
 // const path = require('path');
 
@@ -28,7 +29,7 @@ class MovieDetail extends Component {
                                             key={url}
                                             fluid={false}
                                             height="450px"
-                                            width="800px"
+                                            width='100%'
                                             playsInline
                                             className="video-detail"
                                             src={BASE_VIDEO_ADDRESS + item}

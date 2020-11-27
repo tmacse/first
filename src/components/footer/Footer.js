@@ -10,7 +10,7 @@ class Footer extends Component {
             <div className="footer">
                 <Row>
                     <Col span={6}>
-                        <span className="foot-logo">南充场站强军网</span>
+                        <Link to='/'><span className="foot-logo">南充场站强军网</span></Link>
                         <span className="copyright">Copyright ©1999-2020 ,All Rights Reserved</span>
                     </Col>
                     <Col span={6}>

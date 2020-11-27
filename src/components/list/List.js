@@ -85,10 +85,10 @@ class List extends Component {
                                                             <Link target='_black' to={`/movie_detail/${item._id}`}>
                                                                 <Card
                                                                     hoverable
-                                                                    style={{ width: 160, float: "left" }}
+                                                                    style={{ width: 150, float: "left", marginLeft: '10px' }}
                                                                     cover={<video className='videoPic' alt="example" src={url} />}
                                                                 >
-                                                                    <Card.Meta title={item.title} description={item.desc} />
+                                                                    <Card.Meta title={item.title} description={item.director} />
                                                                 </Card>
                                                             </Link>
                                                         </>)

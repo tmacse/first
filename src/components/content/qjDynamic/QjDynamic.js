@@ -19,19 +19,19 @@ class QjDynamic extends Component {
                     <span><Link to={`/${title}/list`}>强军动态</Link></span>
                 </div>
                 <Row style={{ marginTop: "10px", height: "233px" }}>
-                    <Col flex={1}>
+                    <Col span={5} flex={1}>
                         <Government />
                     </Col>
-                    <Col flex={1}>
+                    <Col span={5} flex={1}>
                         <Train />
                     </Col>
-                    <Col flex={1}>
+                    <Col span={5} flex={1}>
                         <Organization />
                     </Col>
-                    <Col flex={1}>
+                    <Col span={5} flex={1}>
                         <Propagantion />
                     </Col>
-                    <Col flex={1}>
+                    <Col span={5} flex={1}>
                         <ManPower />
                     </Col>
 

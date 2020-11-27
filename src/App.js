@@ -1,3 +1,5 @@
+import "core-js";
+import "regenerator-runtime/runtime";
 import React from 'react';
 import Home from './components/Home'
 import { Provider } from 'react-redux';
@@ -10,6 +12,8 @@ import ScrollToTop from './components/ScrollToTop';
 import MailDetail from './components/mail/MailDetail';
 import Success from './components/success/Success';
 import DynamicList from './components/list/DynamicList';
+import BackToTop from "./components/BackToTop";
+
 function App() {
   return (
     <Provider store={store}>
@@ -24,6 +28,7 @@ function App() {
             <Route path='/mail/:attr' component={MailDetail}></Route>
             <Route path='/success' component={Success}></Route>
           </ScrollToTop>
+          <BackToTop />
         </BrowserRouter>
       </div>
     </Provider>

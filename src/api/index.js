@@ -6,6 +6,6 @@
  */
 import ajax from './ajax';
 // const BASE = ''
-const BASE = 'http://28.27.40.77'
+const BASE = 'http://28.27.40.77:5000'
 
 export const reqAddMail = (mail) => ajax(BASE + '/mail/add', mail, "POST")

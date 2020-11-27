@@ -13,10 +13,12 @@ class Mid extends Component {
                         size="small"
                         bordered
                         dataSource={this.props.list}
-                        renderItem={item => <List.Item id={item.get('_id')}>
-                            <Typography.Text ellipsis="true">
-                                <Link target="_black" to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
-                            </Typography.Text></List.Item>}>
+                        renderItem={item =>
+                            <List.Item id={item.get('_id')}>
+                                <Typography.Text ellipsis="true">
+                                    <Link target="_black" to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
+                                </Typography.Text>
+                            </List.Item>}>
                     </List>
                 </Card>
             </div>
