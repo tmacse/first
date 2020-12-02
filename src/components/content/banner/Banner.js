@@ -4,7 +4,7 @@ import './banner.css'
 class Banner extends Component {
     render() {
         return (
-            <div style={{ marginTop: "70px", height: "60px" }}>
+            <div style={{ marginTop: "45px", height: "60px" }}>
                 <div className='banner left' style={{ width: "500px" }}>
                     <span>学习贯彻军队基层纲要学习贯彻军队基层纲要</span>
                 </div>

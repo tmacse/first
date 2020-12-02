@@ -15,6 +15,7 @@ export const getDetail = (id) => {
 				main_actor: result[0].main_actor,
 				desc: result[0].desc,
 				attr: result[0].attr,
+				
 			}
 			dispatch(action);
 		})
