@@ -11,7 +11,7 @@ class Video extends Component {
             <div>
                 <Card hoverable className="movie-card" title={<Link to={`/${title}/list`}>练兵备战</Link>}>
                     <Carousel effect="fade" autoplay>
-                        {this.props.list.slice(0, 1).map((item) => {
+                        {this.props.list.slice(0, 2).map((item) => {
                             const url = path.join('/public/video', item.get('url').get(0))
                             return (
                                 <div key={item.get('_id')}>

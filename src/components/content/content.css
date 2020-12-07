@@ -25,6 +25,18 @@ a{
   margin-top: 110px;
   width:100%;
 }
+/* 值班领导的css样式 */
+.navleft-11 {
+  height: 40px;
+  background-color: #EA8700;
+  text-align: left;
+  line-height: 40px;
+  color: white;
+  width: 100%;
+}
+.ant-divider-horizontal {
+  margin: 8px 0;
+}
 .navleft-2 {
   height: 40px;
   background-color: #6b629A;
@@ -33,6 +45,16 @@ a{
   color: white;
   position: absolute;
   margin-top: 160px;
+  width: 100%;
+}
+.navleft-22 {
+  height: 40px;
+ background-color: #E55F0b;
+  text-align: left;
+  line-height: 40px;
+  color: white;
+
+  
   width: 100%;
 }
 .navleft-3 {

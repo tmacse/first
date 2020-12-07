@@ -3,7 +3,6 @@ import { Card, Divider, List, Typography } from 'antd'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
-
 class NavRight extends Component {
     render() {
         const title = 'notices'
@@ -24,7 +23,16 @@ class NavRight extends Component {
                             <Link target="_black" to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
                         </Typography.Text></List.Item>}>
                 </List>
-            </Card >
+                <Divider style={{ marginTop: 7, marginBottom: 7 }} />
+                <div className='navleft-11'>
+                    <span style={{ float: 'left', marginLeft: 20 }}>值班领导：</span>
+                    <span style={{ float: 'right', marginRight: 20 }}><bold>李志强</bold></span>
+                </div>
+                <div className='navleft-22'>
+                    <span style={{ float: 'left', marginLeft: 20 }}>值班参谋：</span>
+                    <span style={{ float: 'right', marginRight: 20 }}>孙同山</span>
+                </div>
+            </Card>
 
         )
     }

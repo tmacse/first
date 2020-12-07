@@ -60,7 +60,9 @@ export default class Links extends Component {
                         <a href='http://25.36.80.80/'>一旅强军网</a>
                         <a href='http://24.145.81.50/'>二旅强军网</a>
                         <a href='http://24.41.136.83/'>三旅强军网</a>
-                        <a href='http://24.32.240.7/'>四旅强军网</a></Col>
+                        <a href='http://24.32.240.7/'>四旅强军网</a>
+                        <a href='http://28.27.40.126/'>五旅强军网</a>
+                    </Col>
                 </Row>
             </Layout>
         )
