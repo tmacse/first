@@ -10,6 +10,7 @@ import QjDynamic from './qjDynamic/QjDynamic'
 import QjCulture from './qjCulture/QjCulture'
 import QjMien from './qjMien/QjMien'
 import QjScale from './qjScale/QjScale'
+import QjNews from './qjNews/QjNews';
 
 class Content extends Component {
     render() {
@@ -19,6 +20,7 @@ class Content extends Component {
                 <QjLevel />
                 <Banner />
                 <QjDynamic />
+                <QjNews />
                 {/* <Banner /> */}
                 <QjCulture />
                 <QjMien />

@@ -26,7 +26,7 @@ class NavRight extends Component {
                 <Divider style={{ marginTop: 7, marginBottom: 7 }} />
                 <div className='navleft-11'>
                     <span style={{ float: 'left', marginLeft: 20 }}>值班领导：</span>
-                    <span style={{ float: 'right', marginRight: 20 }}><bold>李志强</bold></span>
+                    <span style={{ float: 'right', marginRight: 20 }}>李志强</span>
                 </div>
                 <div className='navleft-22'>
                     <span style={{ float: 'left', marginLeft: 20 }}>值班参谋：</span>

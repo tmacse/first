@@ -5,7 +5,8 @@
 基本要求: 能根据接口文档定义接口请求函数
  */
 import ajax from './ajax';
-// const BASE = ''
-const BASE = 'http://28.27.40.77:5000'
+import { BASE } from '../consant/Consant'
 
 export const reqAddMail = (mail) => ajax(BASE + '/mail/add', mail, "POST")
+//获取部分队的新闻列表
+export const reqNews = (department) => ajax(BASE + '/article/news', { department }, "POST")

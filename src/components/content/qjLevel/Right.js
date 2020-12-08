@@ -18,7 +18,9 @@ class Right extends Component {
                                     console.log(url)
                                     return (
                                         <div key={item.get('_id')}>
-                                            <Link target="_black" to={`/detail/${item.get('_id')}`}><img style={{ height: '233px', width: '100%' }} src={url} alt='imag' /></Link>
+                                            <Link target="_black" to={`/detail/${item.get('_id')}`}>
+                                                <img style={{ height: '233px', width: '100%' }} src={url} alt='imag' />
+                                            </Link>
                                         </div>
                                     )
                                 })

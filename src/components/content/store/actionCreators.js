@@ -20,6 +20,7 @@ export const getHomeInfo = () => {
 				videolist: result.videolist,
 				vloglist: result.vloglist,
 				videoNewslist: result.videoNewslist,
+				jwNewslist: result.jwNewslist,
 			}
 			dispatch(action);
 		})
