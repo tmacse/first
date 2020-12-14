@@ -13,26 +13,26 @@ class NavLeft extends Component {
                 <Link to='/'>
                     <div className='navleft-1'>
                         <HighlightOutlined className='navleft-icon' />
-                        <span className='navleft-span'>考试网</span>
+                        <span className='navleft-span msHeiTi'>考试网</span>
                     </div>
                 </Link>
 
                 <Link target='_black' to='/movie/list'>
                     <div className='navleft-2'>
                         <YoutubeOutlined className='navleft-icon' />
-                        <span className='navleft-span'>精品视频观看</span>
+                        <span className='navleft-span msHeiTi'>精品视频观看</span>
                     </div>
                 </Link>
                 <Link to='/'>
                     <div className='navleft-3'>
                         <CodeOutlined className='navleft-icon' />
-                        <span className='navleft-span'>量化记录评比</span>
+                        <span className='navleft-span msHeiTi'>量化记录评比</span>
                     </div>
                 </Link>
                 <Link to='/'>
                     <div className='navleft-4'>
                         <ContainerOutlined className='navleft-icon' />
-                        <span className='navleft-span'>问卷调查</span>
+                        <span className='navleft-span msHeiTi'>问卷调查</span>
                     </div>
                 </Link>
 

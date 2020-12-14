@@ -12,11 +12,9 @@ class QjLevel extends Component {
             <div className='qj-level'>
 
                 <Link to='/curriculum/list'>
-                    <div className='tangle hoverable'>
-                        {/* <img  /> */}
-                        <span>强军阶梯</span>
-                    </div></Link>
-                <Row style={{ marginTop: "10px", height: "233px" }}>
+                    <img style={{ marginTop: 20, marginBottom: 20 }} alt='1' src={require('../../../img/qjjt.png')}></img>
+                </Link>
+                <Row style={{ marginTop: "10px" }}>
                     <Col span={6}  >
                         <Left />
                     </Col>

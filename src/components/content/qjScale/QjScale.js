@@ -7,10 +7,9 @@ export default class QjScale extends Component {
     render() {
         return (
             <div className='qj-level'>
-                <div className='tangle hoverable'>
+                <div>
                     <Link target='_black' to='/mail/zw'>
-                        {/* <img  /> */}
-                        <span>强军天平</span>
+                        <img style={{ marginTop: 20, marginBottom: 20 }} alt='1' src={require('../../../img/qjtp.png')} />
                     </Link>
 
                 </div>

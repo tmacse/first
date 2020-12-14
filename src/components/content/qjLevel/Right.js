@@ -8,18 +8,23 @@ class Right extends Component {
     render() {
         const title = 'symposia'
         return (
-            <Card hoverable title={<Link target="_black" to={`/${title}/list`}>活动概况</Link>}>
+            <Card hoverable title={<Link target="_black" to={`/${title}/list`}><span className='msHeiTi bigger-font'>新闻动态</span></Link>}>
                 <Row>
                     <Col span={14}>
                         <Carousel >
                             {
-                                this.props.list.map((item) => {
+                                this.props.list.slice(0, 1).map((item) => {
                                     const url = path.join('/public/image/articles', item.get('thumbnail').get(0))
                                     console.log(url)
                                     return (
                                         <div key={item.get('_id')}>
                                             <Link target="_black" to={`/detail/${item.get('_id')}`}>
-                                                <img style={{ height: '233px', width: '100%' }} src={url} alt='imag' />
+                                                <img style={{ height: '251px', width: '100%' }} src={url} alt='imag' />
+                                                <div className='news-title-bg'>
+                                                    <div className='news-title'>
+                                                        {item.get('title')}
+                                                    </div>
+                                                </div>
                                             </Link>
                                         </div>
                                     )
@@ -33,7 +38,8 @@ class Right extends Component {
                             bordered
                             dataSource={this.props.list}
                             renderItem={item => <List.Item id={item.get('_id')}>
-                                <Typography.Text ellipsis="true">
+                                <Typography.Text style={{ marginLeft: 10, width: 240 }} ellipsis="true">
+
                                     <Link target="_black" to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
                                 </Typography.Text></List.Item>}>
                         </List>

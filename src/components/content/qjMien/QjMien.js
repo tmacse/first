@@ -5,9 +5,8 @@ export default class QjMien extends Component {
     render() {
         return (
             <div className='qj-level'>
-                <div className='tangle hoverable'>
-                    {/* <img  /> */}
-                    <span>强军风采</span>
+                <div>
+                    <img style={{ marginTop: 20, marginBottom: 20 }} alt='1' src={require('../../../img/qjfc.png')} />
                     <img alt='1' src={require('../../../img/mien.png')} />
                 </div>
             </div>

@@ -9,7 +9,7 @@ class Video extends Component {
         const title = 'video'
         return (
             <div>
-                <Card hoverable className="movie-card" title={<Link to={`/${title}/list`}>练兵备战</Link>}>
+                <Card hoverable className="movie-card" title={<Link to={`/${title}/list`}><span className='msHeiTi bigger-font'>练兵备战</span></Link>}>
                     <Carousel effect="fade" autoplay>
                         {this.props.list.slice(0, 2).map((item) => {
                             const url = path.join('/public/video', item.get('url').get(0))
@@ -30,6 +30,7 @@ class Video extends Component {
                         dataSource={this.props.list}
                         renderItem={item => <List.Item id={item.get('_id')}>
                             <Typography.Text ellipsis="true">
+                                <div className='status-point'> </div>
                                 <Link target="_black" to={`/movie_detail/${item.get('_id')}`}>{item.get('title')}</Link>
                             </Typography.Text>
                             <span style={{ float: 'right' }}>{item.get('director')}</span>

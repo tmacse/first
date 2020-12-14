@@ -8,14 +8,15 @@ class Mid extends Component {
         const title = 'case'
         return (
             <div>
-                <Card hoverable title={<Link target="_black" to={`/${title}/list`}>案例分析</Link>}>
+                <Card hoverable title={<Link target="_black" to={`/${title}/list`}><span className='msHeiTi bigger-font'>案例分析</span></Link>}>
                     <List
                         size="small"
                         bordered
                         dataSource={this.props.list}
                         renderItem={item =>
                             <List.Item id={item.get('_id')}>
-                                <Typography.Text ellipsis="true">
+                                <Typography.Text ellipsis="true" style={{ width: 280 }}>
+                                    <div className='status-point' style={{ backgroundColor: '#DE2910' }}> </div>
                                     <Link target="_black" to={`/detail/${item.get('_id')}`}>{item.get('title')}</Link>
                                 </Typography.Text>
                             </List.Item>}>

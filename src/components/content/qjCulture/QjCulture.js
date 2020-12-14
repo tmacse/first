@@ -4,7 +4,7 @@ import Movie from './Movie'
 import Video from './Video'
 import Vlog from './Vlog'
 // import { QJWH } from '../../../img/qjwh.png'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 class QjCulture extends Component {
     render() {

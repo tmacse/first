@@ -10,7 +10,7 @@ class Movie extends Component {
         const title = 'movie'
         return (
             <div>
-                <Card hoverable className="movie-card" title={<Link to={`/${title}/list`}>强军影视</Link>}>
+                <Card hoverable className="movie-card" title={<Link to={`/${title}/list`}><span className='msHeiTi bigger-font'>强军影视</span></Link>}>
                     <Carousel effect="fade" autoplay>
                         {this.props.list.slice(0, 2).map((item) => {
                             const url = path.join('/public/video', item.get('url').get(0))
@@ -39,6 +39,7 @@ class Movie extends Component {
                         dataSource={this.props.list}
                         renderItem={item => <List.Item id={item.get('_id')}>
                             <Typography.Text ellipsis="true">
+                                <div className='status-point'> </div>
                                 <Link target="_black" to={`/movie_detail/${item.get('_id')}`}>
                                     <span>{item.get('title')}</span>
 
