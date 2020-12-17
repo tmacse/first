@@ -14,8 +14,8 @@ class Home extends Component {
         return (
             <DocumentTitle title='场站强军网首页'>
                 <Layout>
-                    <Header style={{ "height": "250px" }}><MyHeader className='myheader' /></Header>
-                    <Content><MyContent /></Content>
+                    <Header ><MyHeader className='myheader' /></Header>
+                    <Content style={{ marginTop: 170 }}><MyContent /></Content>
                     <Footer><MyFooter /></Footer>
                 </Layout>
             </DocumentTitle>

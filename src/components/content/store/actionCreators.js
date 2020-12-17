@@ -4,6 +4,7 @@ import { CHANGE_HOME_DATA } from './actionTypes';
 export const getHomeInfo = () => {
 	return (dispatch) => {
 		axios.get('/homedata').then((res) => {
+			// console.log(res)
 			const result = res.data.data;
 			const action = {
 				type: CHANGE_HOME_DATA,
@@ -21,6 +22,7 @@ export const getHomeInfo = () => {
 				vloglist: result.vloglist,
 				videoNewslist: result.videoNewslist,
 				jwNewslist: result.jwNewslist,
+				picShow: result.picShow,
 			}
 			dispatch(action);
 		})

@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import * as React from 'react';
 import { ColumnType } from './interface';
 import { ColumnProps } from './Column';
 export interface ColumnGroupProps<RecordType> extends Omit<ColumnType<RecordType>, 'children'> {

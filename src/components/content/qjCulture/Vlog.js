@@ -18,6 +18,7 @@ class Vlog extends Component {
                                 <div key={item.get('_id')}>
                                     <Link target="_black" to={`/movie_detail/${item.get('_id')}`}>
                                         <video
+                                            className='newcarousel'
                                             poster={item.get('thumbnail')}
                                             style={{ height: '233px', width: '100%' }} src={url} alt='video' />
                                     </Link>

@@ -30,6 +30,7 @@ class NavMid extends Component {
                                 poster={item.get('thumbnail')}
                                 src={url}
 
+
                             // autoPlay={true}
                             >
                                 <BigPlayButton position="center" />

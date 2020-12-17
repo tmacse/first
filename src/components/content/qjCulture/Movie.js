@@ -22,9 +22,7 @@ class Movie extends Component {
                                             poster={item.get('thumbnail')}
                                             style={{ height: '233px', width: '100%' }}
                                             src={url}
-                                            // fluid={false}
-                                            // width="800px"
-                                            // playsInline
+                                            className='newcarousel'
                                             alt='video'
                                         />
                                     </Link>

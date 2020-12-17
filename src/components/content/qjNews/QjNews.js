@@ -13,19 +13,26 @@ const { TabPane } = Tabs;
 
 class QjNews extends Component {
     state = {
-        newList: [] //反馈的新闻新闻列表
+        newList: [],//反馈的新闻新闻列表
+        isSelected: 'false'//定义是否被选中
+
     }
-    //定义取到后台反馈数据的函数
-    callback = async (key) => {
+    callback = (key) => {
         console.log(key)
+    }
+    //定义切换取到后台反馈数据的函数
+    tabClick = async (key) => {
         let result;
         result = await reqNews(key)
-        // console.log(result)
         const { list, err } = result
         if (err === 0) {
             this.setState({ newList: list })
-        }
+            console.log(this.state.newList)
 
+        }
+        else {
+            console.log('没有取到数据')
+        }
     }
     render() {
         return (
@@ -35,12 +42,21 @@ class QjNews extends Component {
                     <img alt='1' style={{ marginTop: 10 }} src={require('../../../img/qjxw.png')}></img>
                     <Tabs defaultActiveKey="警卫连"
                         type="card"
+                        onTabClick={this.tabClick}
                         onChange={this.callback}
                         centered={true}
                         animated={{ tabPane: true }}>
                         {//通过map将数组中的数据取出来
                             BASE_ALL_DEPARTMENT.slice(2).map((item) => (
-                                <TabPane tab={<span className='msHeiTi'>{item}</span>} key={item} id={item}>
+                                <TabPane
+                                    tab={
+                                        <span className='msHeiTi' >
+                                            {item}
+                                        </span>
+                                    }
+                                    key={item}
+                                    id={item}
+                                >
                                     {
                                         item === '警卫连' ?
                                             <Row>
@@ -50,10 +66,11 @@ class QjNews extends Component {
                                                             this.props.list.slice(0, 1).map((article) => {
                                                                 const url = path.join('/public/image/articles', article.get('thumbnail').get(0))
 
+
                                                                 return (
                                                                     <div key={article.get('_id')}>
                                                                         <Link target="_black" to={`/detail/${article.get('_id')}`}>
-                                                                            <img style={{ height: '251px', width: '100%' }} src={url} alt='imag' />
+                                                                            <img className='newcarousel' style={{ height: '251px', width: '100%' }} src={url} alt='imag' />
                                                                             <div className='news-title-bg'>
                                                                                 <div className='news-title'>
                                                                                     {article.get('title')}
@@ -112,7 +129,7 @@ class QjNews extends Component {
                                                                 return (
                                                                     <div key={article._id}>
                                                                         <Link target="_black" to={`/detail/${article._id}`}>
-                                                                            <img style={{ height: '251px', width: '100%' }} src={url} alt='imag' />
+                                                                            <img className='newcarousel' style={{ height: '251px', width: '100%' }} src={url} alt='imag' />
                                                                             <div className='news-title-bg'>
                                                                                 <div className='news-title'>
                                                                                     {article.title}
@@ -167,8 +184,8 @@ class QjNews extends Component {
                                 </TabPane>))
                         }
                     </Tabs>
-                </div>
-            </div>
+                </div >
+            </div >
         )
     }
 }

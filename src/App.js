@@ -13,6 +13,7 @@ import MailDetail from './components/mail/MailDetail';
 import Success from './components/success/Success';
 import DynamicList from './components/list/DynamicList';
 import BackToTop from "./components/BackToTop";
+import PicShowDetail from './components/picshowdetail/PicShowDetail'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path='/:attr/dynamiclist' component={DynamicList} exact></Route>
             <Route path='/detail/:_id' component={Detail} exact />
             <Route path='/movie_detail/:id' component={MovieDetail} exact />
+            <Route path='/picshowdetail/:_id' component={PicShowDetail}></Route>
             <Route path='/mail/:attr' component={MailDetail}></Route>
             <Route path='/success' component={Success}></Route>
           </ScrollToTop>

@@ -1,3 +1,11 @@
+.newcarousel {
+  transition: 0.25s;
+}
+
+.newcarousel:hover {
+  transform: translateZ(-20px) scale(1.1);
+}
+
 .ant-list-item{
   display: block;
 }
@@ -17,6 +25,28 @@
   height:35px;
   background-color: #000;
   opacity: 0.7;
+}
+.flex-left-picshow {
+  font-size: 50px;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  /* top:90%; */
+  /* z-index:40; */
+  top: 50%;
+  margin-left: -50px;
+  opacity: 1;
+}
+
+.flex-right-picshow {
+  font-size: 50px;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  margin-right: -50px;
+  opacity: 1;
+  right: 0%;
 }
 .starColor{
       color: #DE2910;
@@ -444,8 +474,11 @@ a.ant-typography,
 }
 
 .links a:hover {
-  font-size: 14px;
-  color: #444444;
+  font-size: 16px;
+  color:#1d6ab4;
+  /* transform: translateZ(-10px) scale(1.05);
+  transition: 0.25s; */
+
 }
 
 .links-content {

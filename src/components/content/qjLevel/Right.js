@@ -19,7 +19,7 @@ class Right extends Component {
                                     return (
                                         <div key={item.get('_id')}>
                                             <Link target="_black" to={`/detail/${item.get('_id')}`}>
-                                                <img style={{ height: '251px', width: '100%' }} src={url} alt='imag' />
+                                                <img className='newcarousel' style={{ height: '251px', width: '100%' }} src={url} alt='imag' />
                                                 <div className='news-title-bg'>
                                                     <div className='news-title'>
                                                         {item.get('title')}
