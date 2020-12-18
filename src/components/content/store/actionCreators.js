@@ -23,6 +23,7 @@ export const getHomeInfo = () => {
 				videoNewslist: result.videoNewslist,
 				jwNewslist: result.jwNewslist,
 				picShow: result.picShow,
+				qjPolicy: result.qjPolicy
 			}
 			dispatch(action);
 		})

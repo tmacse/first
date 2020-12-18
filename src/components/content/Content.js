@@ -11,6 +11,7 @@ import QjCulture from './qjCulture/QjCulture'
 import QjMien from './qjMien/QjMien'
 import QjScale from './qjScale/QjScale'
 import QjNews from './qjNews/QjNews';
+import QjPolicy from './qjPolicy/QjPolicy';
 
 class Content extends Component {
     render() {
@@ -24,7 +25,9 @@ class Content extends Component {
                 {/* <Banner /> */}
                 <QjCulture />
                 <QjMien />
+                <QjPolicy />
                 <QjScale />
+
             </div>
         )
     }

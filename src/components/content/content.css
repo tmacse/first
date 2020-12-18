@@ -5,6 +5,11 @@
 .newcarousel:hover {
   transform: translateZ(-20px) scale(1.1);
 }
+.pictext-right{
+  float: right;
+  font-size: 14px;
+  color: #555555;
+}
 
 .ant-list-item{
   display: block;

@@ -18,6 +18,7 @@ class QjMienPic extends Component {
                                 return (
                                     <Link key={url} target="_black" to={`/picshowdetail/${item.get('_id')}`}>
                                         <img
+                                            className='newcarousel'
                                             style={{ width: 490, height: 318 }}
                                             alt='1' src={url}>
                                         </img>
@@ -35,6 +36,7 @@ class QjMienPic extends Component {
                                 return (
                                     <Link key={url} target="_black" to={`/picshowdetail/${item.get('_id')}`}>
                                         <img
+                                            className='newcarousel'
                                             style={{ width: 278, height: 154, marginBottom: 10 }}
                                             alt='1' src={url}>
                                         </img>

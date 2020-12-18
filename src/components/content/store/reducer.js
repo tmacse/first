@@ -15,7 +15,8 @@ const defaultNewState = fromJS({
 	vloglist: [],
 	videoNewslist: [],
 	jwNewslist: [],//新添加的警卫新闻列表
-	picShow: []
+	picShow: [],
+	qjPolicy: []
 })
 
 export default (state = defaultNewState, action) => {
@@ -36,7 +37,8 @@ export default (state = defaultNewState, action) => {
 				vloglist: fromJS(action.vloglist),
 				videoNewslist: fromJS(action.videoNewslist),
 				jwNewslist: fromJS(action.jwNewslist),
-				picShow: fromJS(action.picShow)
+				picShow: fromJS(action.picShow),
+				qjPolicy: fromJS(action.qjPolicy)
 			})
 		default:
 	}

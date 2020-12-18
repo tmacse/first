@@ -15,10 +15,13 @@ class MienText extends Component {
                         <Link key={item.get('_id')} target="_black" to={`/picshowdetail/${item.get('_id')}`}>
                             <div className='status-point' style={{ backgroundColor: '#DE2910' }}> </div>
                             <Typography.Text
-                                style={{ width: 380, }}
+                                style={{ width: 340 }}
                                 ellipsis="true">
                                 {item.get('title')}
+
                             </Typography.Text>
+                            <span className='pictext-right'>{item.get('department')}</span>
+
                         </Link>
                     </List.Item>
                 )}
