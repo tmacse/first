@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom'
 import { SoundFilled } from '@ant-design/icons'
 
 class NavRight extends Component {
+
     render() {
+        console.log(this.props.leader)
         const title = 'notices'
         return (
             <Card style={{ height: "300px" }}>
@@ -39,19 +41,32 @@ class NavRight extends Component {
                 <Divider style={{ marginTop: 0, marginBottom: 3 }} />
                 <div className='navleft-11'>
                     <span className='msHeiTi' style={{ float: 'left', marginLeft: 20 }}>值班领导：</span>
-                    <span className='msHeiTi' style={{ float: 'right', marginRight: 20 }}>刘磊</span>
+                    <span className='msHeiTi' style={{ float: 'right', marginRight: 20 }}>
+                        {this.props.leader.map((item) => {
+                            return (
+                                <span key={item.get('_id')}>{item.get('leader')}</span>
+                            )
+                        })}
+                    </span>
                 </div>
                 <div className='navleft-22'>
                     <span className='msHeiTi' style={{ float: 'left', marginLeft: 20 }}>值班参谋：</span>
-                    <span className='msHeiTi' style={{ float: 'right', marginRight: 20 }}>孙同山</span>
+                    <span className='msHeiTi' style={{ float: 'right', marginRight: 20 }}>
+                        {this.props.leader.map((item) => {
+                            return (
+                                <span key={item.get('_id')}> { item.get('adviser')}</span>
+                            )
+                        })}
+                    </span>
                 </div>
-            </Card>
+            </Card >
 
         )
     }
 }
 const mapStateToProps = (state) => ({
-    list: state.get('home').get('noticelist')
+    list: state.get('home').get('noticelist'),
+    leader: state.get('home').get('leaderName'),
 })
 
 

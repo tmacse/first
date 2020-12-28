@@ -23,7 +23,8 @@ export const getHomeInfo = () => {
 				videoNewslist: result.videoNewslist,
 				jwNewslist: result.jwNewslist,
 				picShow: result.picShow,
-				qjPolicy: result.qjPolicy
+				qjPolicy: result.qjPolicy,
+				leaderName: result.leaderName,
 			}
 			dispatch(action);
 		})

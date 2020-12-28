@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import "./content.css"
 import Nav from './nav/Nav'
 import QjLevel from './qjLevel/QjLevel'
-import Banner from './banner/Banner'
+// import Banner from './banner/Banner'
 import QjDynamic from './qjDynamic/QjDynamic'
 import QjCulture from './qjCulture/QjCulture'
 import QjMien from './qjMien/QjMien'
@@ -19,7 +19,7 @@ class Content extends Component {
             <div className="container">
                 <Nav />
                 <QjLevel />
-                <Banner />
+                {/* <Banner /> */}
                 <QjDynamic />
                 <QjNews />
                 {/* <Banner /> */}

@@ -9,7 +9,7 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="header" style={{ background: 'url(/public/image/background.png);' }}>
+            <div className="header" style={{ background: "url(/public/image/background.png) no-repeat", backgroundSize: '100%' }}>
                 <Button type="primary" className='header-icon' danger>
                     <a target='_black' href='http://28.27.40.77:5000'>
                         <FormOutlined />
