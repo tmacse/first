@@ -14,6 +14,7 @@ import Success from './components/success/Success';
 import DynamicList from './components/list/DynamicList';
 import BackToTop from "./components/BackToTop";
 import PicShowDetail from './components/picshowdetail/PicShowDetail'
+import Quantization from "./components/quantization/Quantization";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path='/picshowdetail/:_id' component={PicShowDetail}></Route>
             <Route path='/mail/:attr' component={MailDetail}></Route>
             <Route path='/success' component={Success}></Route>
+            <Route path='/quantization' component={Quantization}></Route>
           </ScrollToTop>
           <BackToTop />
         </BrowserRouter>

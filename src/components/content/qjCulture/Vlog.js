@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Card, Carousel, List, Typography } from 'antd'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-const path = require('path');
+import { BASE_VIDEO_ADDRESS } from '../../../consant/Consant'
+// const path = require('path');
 
 class Vlog extends Component {
     render() {
@@ -12,7 +13,8 @@ class Vlog extends Component {
                 <Card hoverable title={<Link to={`/${title}/list`}><span className='msHeiTi bigger-font'>创意视频</span></Link>} className="movie-card">
                     <Carousel effect="fade" autoplay>
                         {this.props.list.slice(0, 2).map((item) => {
-                            const url = path.join('/public/video', item.get('url').get(0))
+
+                            const url = BASE_VIDEO_ADDRESS + item.get('url').get(0)
                             console.log(url)
                             return (
                                 <div key={item.get('_id')}>

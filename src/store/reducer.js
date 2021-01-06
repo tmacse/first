@@ -4,12 +4,14 @@ import { reducer as detailReducer } from '../components/detail/store';
 import { reducer as moviedetailReducer } from '../components/movieDetail/store'
 import { reducer as listReducer } from '../components/list/store'
 import { reducer as picshowdetailRouter } from '../components/picshowdetail/store'
+import { reducer as quantizationRouter } from '../components/quantization/store'
 const reducer = combineReducers({
 	home: homeReducer,
 	detail: detailReducer,
 	moviedetail: moviedetailReducer,
 	list: listReducer,
 	picshowdetail: picshowdetailRouter,
+	quantization: quantizationRouter // 注册双争评比单位的路由
 
 });
 
