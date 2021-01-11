@@ -31,35 +31,36 @@ class Quantization extends Component {
                             <TabPane tab={<h2>争创“四铁”先进单位</h2>} key="1">
                                 <Table
                                     pagination={false}
-                                    dataSource={this.props.list.toJS()} >
+                                    dataSource={this.props.list.toJS()}
+                                    rowKey={record => record._id}
+                                >
                                     <Column
                                         title="单位"
                                         dataIndex="name"
-                                        key="name"
                                         render={text => <span style={{ fontSize: 16 }}>{text}</span>}
                                     />
                                     <Column
                                         title="第一季度"
                                         dataIndex="season1"
-                                        key="season1"
+                                        key='_id'
                                         render={changeTagsColor}
                                     />
                                     <Column
                                         title="第二季度"
                                         dataIndex="season2"
-                                        key="season2"
+                                        key='_id'
                                         render={changeTagsColor}
                                     />
                                     <Column
                                         title="第三季度"
                                         dataIndex="season3"
-                                        key="season3"
+                                        key='_id'
                                         render={changeTagsColor}
                                     />
                                     <Column
                                         title="第四季度(年终总评)"
                                         dataIndex="season4"
-                                        key="season4"
+                                        key='_id'
                                         render={changeTagsColor}
                                     />
                                 </Table>

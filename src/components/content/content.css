@@ -1,3 +1,10 @@
+.ant-menu-horizontal>.ant-menu-item,
+.ant-menu-horizontal>.ant-menu-submenu{
+  border-bottom: 0;
+}
+.ant-menu-horizontal{
+  border-bottom: 0;
+}
 .newcarousel {
   transition: 0.25s;
 }
