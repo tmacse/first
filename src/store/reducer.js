@@ -5,14 +5,15 @@ import { reducer as moviedetailReducer } from '../components/movieDetail/store'
 import { reducer as listReducer } from '../components/list/store'
 import { reducer as picshowdetailRouter } from '../components/picshowdetail/store'
 import { reducer as quantizationRouter } from '../components/quantization/store'
+import { reducer as soloRouter } from '../components/solo/store'
 const reducer = combineReducers({
 	home: homeReducer,
 	detail: detailReducer,
 	moviedetail: moviedetailReducer,
 	list: listReducer,
 	picshowdetail: picshowdetailRouter,
-	quantization: quantizationRouter // 注册双争评比单位的路由
-
+	quantization: quantizationRouter,// 注册双争评比单位的路由
+	solo: soloRouter //注册双争评比个人的路由
 });
 
 export default reducer;

@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { GET_QUANTIZATION_DETAIL } from './actionTypes';
 
-//异步获得详情的界面
+
+//异步获得单位的界面
 export const get_quantization_detail = () => {
 	return (dispatch) => {
 		axios.get('/quantization/list').then((res) => {

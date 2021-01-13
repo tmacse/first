@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Table, Tag, Row, Col, Tabs } from 'antd';
 import DetailHeader from '../header/DetailHeader';
-import SoloQuantization from './SoloQuantization';
+import SoloQuantization from '../solo/SoloQuantization';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 import Column from 'antd/lib/table/Column';
@@ -19,6 +19,7 @@ const changeTagsColor = (text) => {
 }
 class Quantization extends Component {
     render() {
+        console.log(this.props.list.toJS())
         return (
             <>
                 <DetailHeader />
@@ -32,11 +33,12 @@ class Quantization extends Component {
                                 <Table
                                     pagination={false}
                                     dataSource={this.props.list.toJS()}
-                                    rowKey={record => record._id}
+                                    rowKey={(record) => record._id}
                                 >
                                     <Column
                                         title="单位"
                                         dataIndex="name"
+                                        key='_id'
                                         render={text => <span style={{ fontSize: 16 }}>{text}</span>}
                                     />
                                     <Column

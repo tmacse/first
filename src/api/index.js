@@ -10,3 +10,5 @@ import { BASE } from '../consant/Consant'
 export const reqAddMail = (mail) => ajax(BASE + '/mail/add', mail, "POST")
 //获取部分队的新闻列表
 export const reqNews = (department) => ajax(BASE + '/article/news', { department }, "POST")
+//获取四有军人的列表
+export const reqSolo = (season) => ajax(BASE + '/solo/listBySeason', { season }, 'POST')
