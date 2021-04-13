@@ -5,6 +5,7 @@ import SoloQuantization from '../solo/SoloQuantization';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 import Column from 'antd/lib/table/Column';
+import Footer from '../footer/Footer';
 
 const { TabPane } = Tabs;
 
@@ -19,11 +20,11 @@ const changeTagsColor = (text) => {
 }
 class Quantization extends Component {
     render() {
-        console.log(this.props.list.toJS())
+        // console.log(this.props.list.toJS())
         return (
             <>
                 <DetailHeader />
-                <Row>
+                <Row style={{ minHeight: 600 }}>
                     <Col span={16} offset={4} >
                         <h1 style={{ textAlign: 'center', marginTop: 10, marginBottom: 10 }}>
                             《争创“四铁”先进单位，争当“四有”优秀个人活动》信息服务平台
@@ -32,8 +33,9 @@ class Quantization extends Component {
                             <TabPane tab={<h2>争创“四铁”先进单位</h2>} key="1">
                                 <Table
                                     pagination={false}
-                                    dataSource={this.props.list.toJS()}
-                                    rowKey={(record) => record._id}
+                                    dataSource={this.props.list}
+                                // rowKey={(record) => record._id}
+
                                 >
                                     <Column
                                         title="单位"
@@ -73,6 +75,7 @@ class Quantization extends Component {
                         </Tabs>
                     </Col>
                 </Row>
+                <Footer />
             </>
         )
     }

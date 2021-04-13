@@ -11,6 +11,7 @@ export const get_solo_detail = () => {
 				type: GET_SOLO_DETAIL,
 				data: result
 			}
+			console.log('拿到了数据', action.data.content)
 			dispatch(action)
 		})
 	}

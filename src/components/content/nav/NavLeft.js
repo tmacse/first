@@ -26,13 +26,13 @@ class NavLeft extends Component {
                 <Link target='_black' to='/quantization'>
                     <div className='navleft-3'>
                         <CodeOutlined className='navleft-icon' />
-                        <span className='navleft-span msHeiTi'>量化记录评比</span>
+                        <span className='navleft-span msHeiTi'>"双争"信息服务平台</span>
                     </div>
                 </Link>
-                <Link to='/'>
+                <Link to='/statistic'>
                     <div className='navleft-4'>
                         <ContainerOutlined className='navleft-icon' />
-                        <span className='navleft-span msHeiTi'>问卷调查</span>
+                        <span className='navleft-span msHeiTi'>稿件统计</span>
                     </div>
                 </Link>
 

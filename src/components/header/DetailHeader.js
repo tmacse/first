@@ -17,7 +17,9 @@ export default class DetailHeader extends Component {
             <div>
                 <Row>
                     <Col span={16} offset={4}>
-                        <div style={{ height: 100, marginTop: 20, background: 'url(/public/image/7.png) no-repeat' }}></div>
+                        <Link to='/'>
+                            <div style={{ height: 100, marginTop: 20, background: 'url(/public/image/7.png) no-repeat' }}></div>
+                        </Link>
                     </Col>
                 </Row>
 

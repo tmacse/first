@@ -2,9 +2,7 @@ import { fromJS } from 'immutable';
 import { GET_QUANTIZATION_DETAIL } from './actionTypes';
 const defaultDetailState = fromJS({
 	data: [
-		{ _id: '1', name: '军需股', season1: '好', season2: '中', season3: '弱', season4: '好', },
-		{ _id: '2', name: '油料股', season1: '好', season2: '中', season3: '中', season4: '弱', },
-		{ _id: '3', name: '四站连', season1: '弱', season2: '中', season3: '好', season4: '好', },
+
 	]
 })
 

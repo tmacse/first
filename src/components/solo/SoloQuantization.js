@@ -8,8 +8,13 @@ const { TabPane } = Tabs;
 const JIDU = ['一季度优秀个人', '二季度优秀个人', '三季度优秀个人', '四季度优秀个人']
 //设置了样式
 const columns = [
-    { title: '单位', dataIndex: 'department', key: 'department' },
-    { title: '“四有”优秀个人', dataIndex: 'names', key: 'names' }
+    {
+        title: '单位',
+        dataIndex: 'department',
+        key: 'department',
+        render: text => <strong style={{ width: 100, display: 'block' }}>{text}</strong>,
+    },
+    { title: '优秀个人', dataIndex: 'names', key: 'names' }
 ]
 
 class SoloQuantization extends Component {
@@ -19,10 +24,8 @@ class SoloQuantization extends Component {
     //定义切换取到后台反馈数据的函数
     tabClick = async (key) => {
         let result;
-        console.log(key)
         result = await reqSolo(key)
         const { success, content } = result
-        // console.log(success, title, content)
         if (success) {
             this.setState({ soloList: content })
         } else {
@@ -30,6 +33,7 @@ class SoloQuantization extends Component {
         }
     }
     render() {
+        console.log('qianduan拿到的数据', this.props.list.content)
         return (
             <div>
                 <Tabs
@@ -43,14 +47,18 @@ class SoloQuantization extends Component {
                                 {
                                     item === '一季度优秀个人' ?
                                         <Table
+                                            showHeader={false}
                                             pagination={false}
+                                            bordered={true}
                                             rowKey={record => record._id}
-                                            dataSource={this.props.list.toJS()} columns={columns}
+                                            dataSource={this.props.list.content}
+                                            columns={columns}
                                         >
                                         </Table>
                                         :
                                         <Table
                                             pagination={false}
+                                            bordered={true}
                                             rowKey={record => record._id}
                                             dataSource={this.state.soloList} columns={columns}
                                         >
@@ -69,7 +77,7 @@ class SoloQuantization extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    list: state.getIn(['solo', 'data', 'content'])
+    list: state.getIn(['solo', 'data'])
 })
 const mapDispatch = (dispatch) => ({
     get_solo() {
