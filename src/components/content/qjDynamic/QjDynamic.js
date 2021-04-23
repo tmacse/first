@@ -19,19 +19,19 @@ class QjDynamic extends Component {
                     <img alt='1' style={{ marginTop: 20, marginBottom: 20 }} src={require('../../../img/qjdt.png')}></img>
                 </div>
                 <Row style={{ marginTop: "10px", height: "233px" }}>
-                    <Col span={5} flex={1}>
+                    <Col flex='240px'>
                         <Government />
                     </Col>
-                    <Col span={5} flex={1}>
+                    <Col flex='240px'>
                         <Train />
                     </Col>
-                    <Col span={5} flex={1}>
+                    <Col flex='240px'>
                         <Organization />
                     </Col>
-                    <Col span={5} flex={1}>
+                    <Col flex='240px'>
                         <Propagantion />
                     </Col>
-                    <Col span={5} flex={1}>
+                    <Col flex='auto'>
                         <ManPower />
                     </Col>
 

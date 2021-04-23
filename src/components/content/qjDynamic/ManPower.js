@@ -12,10 +12,9 @@ class ManPower extends Component {
                     <List
                         size="small"
                         bordered
-
                         dataSource={this.props.list}
                         renderItem={item => <List.Item id={item.get('_id')}>
-                            <Typography.Text ellipsis="true" style={{ width: 240 }}>
+                            <Typography.Text ellipsis="true" className='my-text'>
                                 <div className='status-point' style={{ backgroundColor: '#DE2910' }}> </div>
                                 <Link target="_black" to={`/detail/${item.get('_id')}`}>
                                     <span style={{ fontSize: 14 }}>{item.get('title')}</span>

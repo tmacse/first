@@ -7,6 +7,7 @@ import { reducer as picshowdetailRouter } from '../components/picshowdetail/stor
 import { reducer as quantizationRouter } from '../components/quantization/store'
 import { reducer as soloRouter } from '../components/solo/store'
 import { reducer as statisticsRouter } from '../components/statistics/store'
+import { reducer as historyRouter } from '../components/active/store'
 const reducer = combineReducers({
 	home: homeReducer,
 	detail: detailReducer,
@@ -15,7 +16,8 @@ const reducer = combineReducers({
 	picshowdetail: picshowdetailRouter,
 	quantization: quantizationRouter,// 注册双争评比单位的路由
 	solo: soloRouter, //注册双争评比个人的路由
-	statistics: statisticsRouter
+	statistics: statisticsRouter,
+	history: historyRouter//注册党史学习100周年的路由
 });
 
 export default reducer;

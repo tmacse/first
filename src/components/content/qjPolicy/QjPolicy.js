@@ -36,7 +36,7 @@ class QjPolicy extends Component {
 
                         <List
                             bordered
-                            dataSource={this.props.list.slice(8, 14)}
+                            dataSource={this.props.list.slice(7, 14)}
                             renderItem={item => (
                                 <List.Item style={{ paddingLeft: 0, paddingRight: 0 }}>
                                     <Link key={item.get('_id')} target="_black" to={`/detail/${item.get('_id')}`}>

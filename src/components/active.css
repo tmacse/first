@@ -1,0 +1,15 @@
+.activePage{
+    width: 800px;
+   
+    background-color: rgba(255, 0, 0, 0);
+    margin: auto;
+    
+}
+/* 原先padding:24px导致图片与背景不融合 */
+.ant-modal-body{
+    padding: 0 ;
+}
+.historyContent{
+    margin: 0 auto;
+    width: 1100px;
+}

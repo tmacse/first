@@ -3,7 +3,7 @@ import Header from '../header/Header'
 import Footer from '../footer/Footer'
 import DocumentTitle from 'react-document-title'
 import { NAV_LIST, BASE_VIDEO_ADDRESS } from '../../consant/Consant'
-import { Row, Col, Table, Card } from 'antd'
+import { Row, Col, Table, Card, Pagination } from 'antd'
 import { actionCreators } from './store';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
@@ -76,26 +76,32 @@ class List extends Component {
                                                 render={(item) => (<span style={{ float: "right" }}>{item.time}</span>)}
                                             />
                                         </Table>
-                                        : <Card title={`${result}的列表`}>
-                                            {data.list !== undefined ?
-                                                data.list.map((item) => {
-                                                    const url = BASE_VIDEO_ADDRESS + item.url
-                                                    return (
-                                                        <>
-                                                            <Link target='_black' to={`/movie_detail/${item._id}`}>
-                                                                <Card
-                                                                    hoverable
-                                                                    style={{ width: 150, float: "left", marginLeft: '10px' }}
-                                                                    cover={<video className='videoPic' alt="example" poster={item.thumbnail} src={url} />}
-                                                                >
-                                                                    <Card.Meta title={item.title} description={item.director} />
-                                                                </Card>
-                                                            </Link>
-                                                        </>)
-                                                })
-                                                : ''
-                                            }
-                                        </Card>
+                                        : <>
+                                            <Card title={`${result}的列表`}>
+                                                {data.list !== undefined ?
+                                                    data.list.map((item) => {
+                                                        const url = BASE_VIDEO_ADDRESS + item.url
+
+                                                        return (
+                                                            <>
+                                                                <Link target='_black' to={`/movie_detail/${item._id}`}>
+                                                                    <Card
+                                                                        hoverable
+                                                                        style={{ width: 150, float: "left", marginLeft: '10px' }}
+                                                                        cover={<video className='videoPic' alt="example" poster={item.thumbnail} src={url} />}
+                                                                    >
+                                                                        <Card.Meta style={{ textAlign: 'center', width: '100%' }} title={item.title} description={item.director} />
+                                                                    </Card>
+                                                                </Link>
+
+                                                            </>)
+                                                    })
+                                                    : ''
+                                                }
+
+                                            </Card>
+                                            <Pagination onChange={this.onChange} defaultCurrent={1} total={total} style={{ right: 0, bottom: 20, position: 'absolute' }} />
+                                        </>
                                 }
                             </Col>
                         </Row>

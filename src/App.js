@@ -16,6 +16,8 @@ import BackToTop from "./components/BackToTop";
 import PicShowDetail from './components/picshowdetail/PicShowDetail'
 import Quantization from "./components/quantization/Quantization";
 import Statistics from "./components/statistics/Statistics";
+import HistoryPage from "./components/active/HistoryPage";
+
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
             <Route path='/success' component={Success}></Route>
             <Route path='/quantization' component={Quantization}></Route>
             <Route path='/statistic' component={Statistics}></Route>
+            <Route path='/history' component={HistoryPage}></Route>
           </ScrollToTop>
           <BackToTop />
         </BrowserRouter>
