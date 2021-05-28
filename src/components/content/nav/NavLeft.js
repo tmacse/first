@@ -23,7 +23,7 @@ class NavLeft extends Component {
                         <span className='navleft-span msHeiTi'>精品视频观看</span>
                     </div>
                 </Link>
-                <Link target='_black' to='/quantization'>
+                <Link target='_black' to='/quantizationly'>
                     <div className='navleft-3'>
                         <CodeOutlined className='navleft-icon' />
                         <span className='navleft-span msHeiTi'>"双争"信息服务平台</span>

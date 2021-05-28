@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, Card, Descriptions } from 'antd'
+import { Row, Col, Card, Descriptions, Divider } from 'antd'
 import "../../../node_modules/video-react/dist/video-react.css";
 import { connect } from 'react-redux';
 import DocumentTitle from 'react-document-title'
@@ -8,18 +8,60 @@ import { actionCreators } from './store';
 import DetailHeader from '../header/DetailHeader'
 import Footer from '../footer/Footer'
 import { Player, BigPlayButton } from 'video-react'
+import { LikeTwoTone } from '@ant-design/icons';
+import './movie.css'
 // import Header from '../header/Header';
 
 // const path = require('path');
 
+
 class MovieDetail extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            thumbNum: 100,
+            liked: 'null',
+        };
+    }
+    // componentDidUpdate() {
+    //     this.setState({ thumbNum: 1000 })
+    // }
+    //点赞功能函数
+    thumbClick = () => {
+        let storage = window.sessionStorage
+        storage.setItem('name', 'hujun')
+
+
+    }
+    islike = () => {
+        let liked = this.state.liked;
+        if (liked) {
+            if (liked === 'like') {
+                this.setState({ liked: null })
+                this.setState({ like: this.state.like - 1 });
+            }
+            else {
+                this.setState({ liked: 'like' });
+                this.setState({ like: this.state.like + 1, });
+
+            }
+        }
+        else {
+            this.setState({
+                like: this.state.like + 1,
+            });
+            this.setState({ liked: 'like' });
+        }
+    }
+
     render() {
         const url = this.props.url
-        console.log(url, this.props.name)
+
         return (
             <DocumentTitle title={this.props.name}>
                 <div>
                     <DetailHeader />
+
                     <Row style={{ marginBottom: "40px" }}>
                         <Col span={14} offset={3}>
                             {this.props.url.length !== 0 && <div key={url}>
@@ -40,6 +82,18 @@ class MovieDetail extends Component {
                                 })}
                             </div>
                             }
+                            <Divider />
+                            {/* 以下为点赞 */}
+                            <Row>
+                                <Col span={4}>
+                                    <LikeTwoTone
+                                        //  onClick={this.islike} 
+                                        onClick={this.thumbClick}
+                                        className={this.state.liked === 'like' ? 'filled' : 'not_filled'} />
+                                    <span style={{ marginLeft: 5 }}>{this.state.thumbNum}</span>
+                                </Col>
+                            </Row>
+                            <Divider dashed />
                         </Col>
                         <Col span={4}>
                             <Card className="video-recommend">
@@ -57,6 +111,7 @@ class MovieDetail extends Component {
             </DocumentTitle>
         )
     }
+
     componentDidMount() {
         this.props.getDetail(this.props.match.params.id)
     }
@@ -69,6 +124,8 @@ const mapStateToProps = (state) => ({
     main_actor: state.getIn(['moviedetail', 'main_actor']),
     desc: state.getIn(['moviedetail', 'desc']),
     attr: state.getIn(['moviedetail', 'attr']),
+    //返回的点击量的数字
+    thumb_num: state.getIn(['moviedetail', 'thumb_num'])
 
 })
 const mapDispatchToProps = (dispatch) => ({

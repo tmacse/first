@@ -7,6 +7,7 @@ const defaultDetailState = fromJS({
 	main_actor: '',
 	desc: '',
 	attr: '',
+	thumb_num: ''
 })
 
 export default (state = defaultDetailState, action) => {
@@ -19,7 +20,9 @@ export default (state = defaultDetailState, action) => {
 				main_actor: fromJS(action.main_actor),
 				desc: fromJS(action.desc),
 				attr: fromJS(action.attr),
+				thumb_num: fromJS(action.thumb_num)
 			})
+
 
 		default:
 	}

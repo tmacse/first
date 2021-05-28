@@ -1,17 +1,17 @@
-import { fromJS } from 'immutable';
+// import { fromJS } from 'immutable';
 import { GET_QUANTIZATION_DETAIL } from './actionTypes';
-const defaultDetailState = fromJS({
+const defaultDetailState = {
 	data: [
 
 	]
-})
+}
 
 export default (state = defaultDetailState, action) => {
 	switch (action.type) {
 		case GET_QUANTIZATION_DETAIL:
-			return state.merge({
-				data: fromJS(action.data)
-			})
+			return {
+				data: action.data
+			}
 		default:
 	}
 	return state;

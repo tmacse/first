@@ -33,7 +33,7 @@ function App() {
             <Route path='/picshowdetail/:_id' component={PicShowDetail}></Route>
             <Route path='/mail/:attr' component={MailDetail}></Route>
             <Route path='/success' component={Success}></Route>
-            <Route path='/quantization' component={Quantization}></Route>
+            <Route path='/quantizationly' component={Quantization}></Route>
             <Route path='/statistic' component={Statistics}></Route>
             <Route path='/history' component={HistoryPage}></Route>
           </ScrollToTop>

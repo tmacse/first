@@ -11,7 +11,7 @@ const { TabPane } = Tabs;
 
 //定义随着内容改变tag颜色的函数
 const changeTagsColor = (text) => {
-    let color = text === '好' ? 'red' : text === '中' ? 'volcano' : 'geekblue';
+    let color = text === '好' ? '#ff4d4f' : text === '中' ? '#2f54eb' : '#bfbfbf';
     return (
         <Tag color={color}>
             <span style={{ fontSize: 14 }}>{text}</span>
@@ -20,7 +20,7 @@ const changeTagsColor = (text) => {
 }
 class Quantization extends Component {
     render() {
-        // console.log(this.props.list.toJS())
+        console.log(this.props.list)
         return (
             <>
                 <DetailHeader />
@@ -34,7 +34,7 @@ class Quantization extends Component {
                                 <Table
                                     pagination={false}
                                     dataSource={this.props.list}
-                                // rowKey={(record) => record._id}
+                                    rowKey={(record) => record._id}
 
                                 >
                                     <Column
@@ -84,7 +84,7 @@ class Quantization extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    list: state.get('quantization').get('data')
+    list: state.getIn(['quantization', 'data'])
 })
 const mapDispatch = (dispatch) => ({
     get_quantization() {
