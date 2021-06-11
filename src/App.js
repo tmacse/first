@@ -17,29 +17,32 @@ import PicShowDetail from './components/picshowdetail/PicShowDetail'
 import Quantization from "./components/quantization/Quantization";
 import Statistics from "./components/statistics/Statistics";
 import HistoryPage from "./components/active/HistoryPage";
+import { StrictMode } from "react";
 
 
 function App() {
   return (
     <Provider store={store}>
-      <div>
-        <BrowserRouter>
-          <ScrollToTop>
-            <Route path="/" component={Home} exact />
-            <Route path='/:attr/list' component={List} exact />
-            <Route path='/:attr/dynamiclist' component={DynamicList} exact></Route>
-            <Route path='/detail/:_id' component={Detail} exact />
-            <Route path='/movie_detail/:id' component={MovieDetail} exact />
-            <Route path='/picshowdetail/:_id' component={PicShowDetail}></Route>
-            <Route path='/mail/:attr' component={MailDetail}></Route>
-            <Route path='/success' component={Success}></Route>
-            <Route path='/quantizationly' component={Quantization}></Route>
-            <Route path='/statistic' component={Statistics}></Route>
-            <Route path='/history' component={HistoryPage}></Route>
-          </ScrollToTop>
-          <BackToTop />
-        </BrowserRouter>
-      </div>
+      <StrictMode>
+        <div>
+          <BrowserRouter>
+            <ScrollToTop>
+              <Route path="/" component={Home} exact />
+              <Route path='/:attr/list' component={List} exact />
+              <Route path='/:attr/dynamiclist' component={DynamicList} exact></Route>
+              <Route path='/detail/:_id' component={Detail} exact />
+              <Route path='/movie_detail/:id' component={MovieDetail} exact />
+              <Route path='/picshowdetail/:_id' component={PicShowDetail}></Route>
+              <Route path='/mail/:attr' component={MailDetail}></Route>
+              <Route path='/success' component={Success}></Route>
+              <Route path='/quantizationly' component={Quantization}></Route>
+              <Route path='/statistic' component={Statistics}></Route>
+              <Route path='/history' component={HistoryPage}></Route>
+            </ScrollToTop>
+            <BackToTop />
+          </BrowserRouter>
+        </div>
+      </StrictMode>
     </Provider>
   );
 }
