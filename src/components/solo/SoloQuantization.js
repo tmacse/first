@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Tabs, Table } from 'antd';
 import { reqSolo } from '../../api/index.js'
 import { connect } from 'react-redux';
@@ -17,65 +17,63 @@ const columns = [
     { title: '优秀个人', dataIndex: 'names', key: 'names' }
 ]
 
-class SoloQuantization extends Component {
-    state = {
-        soloList: [],//反馈的人员列表列表
-    }
+const SoloQuantization = (props) => {
+    const { get_solo } = props
+    const { content } = props.list
+    const [soloList, setSoloList] = useState([])
     //定义切换取到后台反馈数据的函数
-    tabClick = async (key) => {
+    async function tabClick(key) {
         let result;
         result = await reqSolo(key)
         const { success, content } = result
         if (success) {
-            this.setState({ soloList: content })
-        } else {
-            console.log('222')
+            setSoloList(content)
         }
-    }
-    render() {
-        console.log('qianduan拿到的数据', this.props.list.content)
-        return (
-            <div>
-                <Tabs
-                    type="card"
-                    centered
-                    onTabClick={this.tabClick}
-                    defaultActiveKey='一季度优秀个人'>
-                    {
-                        JIDU.map((item) => (
-                            <TabPane tab={item} key={item}>
-                                {
-                                    item === '一季度优秀个人' ?
-                                        <Table
-                                            showHeader={false}
-                                            pagination={false}
-                                            bordered={true}
-                                            rowKey={record => record._id}
-                                            dataSource={this.props.list.content}
-                                            columns={columns}
-                                        >
-                                        </Table>
-                                        :
-                                        <Table
-                                            pagination={false}
-                                            bordered={true}
-                                            rowKey={record => record._id}
-                                            dataSource={this.state.soloList} columns={columns}
-                                        >
-                                        </Table>
-                                }
+    };
 
-                            </TabPane>
-                        ))
-                    }
-                </Tabs>
-            </div>
-        )
-    }
-    componentDidMount() {
-        this.props.get_solo();
-    }
+    useEffect(() => {
+        get_solo()
+    }, [get_solo])
+
+    return (
+        <div>
+            <Tabs
+                type="card"
+                centered
+                onTabClick={tabClick}
+                defaultActiveKey='一季度优秀个人'>
+                {
+                    JIDU.map((item) => (
+                        <TabPane tab={item} key={item}>
+                            {
+                                item === '一季度优秀个人' ?
+                                    <Table
+                                        showHeader={false}
+                                        pagination={false}
+                                        bordered={true}
+                                        rowKey={record => record._id}
+                                        dataSource={content}
+                                        columns={columns}
+                                    >
+                                    </Table>
+                                    :
+                                    <Table
+                                        pagination={false}
+                                        bordered={true}
+                                        rowKey={record => record._id}
+                                        dataSource={soloList} columns={columns}
+                                    >
+                                    </Table>
+                            }
+
+                        </TabPane>
+                    ))
+                }
+            </Tabs>
+        </div>
+    )
 }
+
 const mapStateToProps = (state) => ({
     list: state.getIn(['solo', 'data'])
 })

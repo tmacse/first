@@ -13,14 +13,14 @@ const layout = { labelCol: { span: 6 }, wrapperCol: { span: 16 }, };
 const tailLayout = { wrapperCol: { offset: 6, span: 16 }, };
 
 
-function MailDetail() {
-    const attr = this.props.match.params.attr
+const MailDetail = (props) => {
+    const attr = props.match.params.attr
     //定义提交的反馈
     function onFinish(values) {
         const result = reqAddMail(values)
         if (result.err === 0) {
             message.success('邮件成功投递')
-            this.props.history.push('/success', values.leader)
+            props.history.push('/success', values.leader)
         }
         else {
             message.error('邮件发送失败，请与管理员联系')

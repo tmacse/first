@@ -77,14 +77,6 @@ const DynamicList = (props) => {
         </DocumentTitle>
     )
 }
-// //通过此生命周期，拿到了更新后的attr值(实现了点击左边LeftNav的值实现了切换的效果)
-// componentDidUpdate(nextProps) {
-//     if (nextProps.location.pathname !== this.props.location.pathname) {
-//         console.log(nextProps.location.pathname, this.props.location.pathname, '11111')
-//         this.props.getList(nextProps.match.params.attr, 1)
-//     }
-
-// }
 
 //返回过来的状态
 const mapStateToProps = (state) => ({

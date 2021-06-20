@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Row, Col, Typography, Image } from 'antd';
 import { connect } from 'react-redux';
 import DetailHeader from '../header/DetailHeader'
@@ -8,45 +8,45 @@ import { BASE_PICSHOW_ADDRESS } from '../../consant/Consant'
 import { actionCreators } from './store';
 const { Title } = Typography;
 
+const contentStyle = {
+    marginTop: 10,
+    width: '100%',
+    height: 290,
+};
 
-class PicShowDetail extends Component {
+const PicShowDetail = (props) => {
+    const { getPicShowDetail, pics, title, author } = props
+    const id = props.match.params._id
+    useEffect(() => {
+        getPicShowDetail(id)
 
+    }, [getPicShowDetail, id])
 
-    render() {
-        const contentStyle = {
-            marginTop: 10,
-            width: '100%',
-            height: 290,
-        };
-        return (
-            <DocumentTitle title={this.props.title}>
-                <div>
-                    <DetailHeader />
-                    <Row style={{ minHeight: 500, }}>
-                        <Col style={{ background: '#e9fcfc' }} span={16} offset={4}  >
-                            <Title
-                                level={3}
-                                style={{ textAlign: "left", marginLeft: 40 }}
-                            >
-                                标题：{this.props.title}</Title>
-                            <span style={{ display: 'block', marginLeft: 40 }}>作者：{this.props.author}</span>
-                            {this.props.pics.length !== 0 && this.props.pics.map((item) => (
-                                <Col span={11} offset={1} style={{ marginTop: 10, marginBottom: 20, float: 'left' }} key={item}>
-                                    <Image className='newcarousel'
-                                        alt='1' style={contentStyle} src={BASE_PICSHOW_ADDRESS + item} >
-                                    </Image>
-                                </Col>
-                            ))}
-                        </Col>
-                    </Row>
-                    <Footer />
-                </div>
-            </DocumentTitle>
-        )
-    }
-    componentDidMount() {
-        this.props.getPicShowDetail(this.props.match.params._id)
-    }
+    return (
+        <DocumentTitle title={title}>
+            <div>
+                <DetailHeader />
+                <Row style={{ minHeight: 500, }}>
+                    <Col style={{ background: '#e9fcfc' }} span={16} offset={4}  >
+                        <Title
+                            level={3}
+                            style={{ textAlign: "left", marginLeft: 40 }}
+                        >
+                            标题：{title}</Title>
+                        <span style={{ display: 'block', marginLeft: 40 }}>作者：{author}</span>
+                        {pics.length !== 0 && pics.map((item) => (
+                            <Col span={11} offset={1} style={{ marginTop: 10, marginBottom: 20, float: 'left' }} key={item}>
+                                <Image className='newcarousel'
+                                    alt='1' style={contentStyle} src={BASE_PICSHOW_ADDRESS + item} >
+                                </Image>
+                            </Col>
+                        ))}
+                    </Col>
+                </Row>
+                <Footer />
+            </div>
+        </DocumentTitle>
+    )
 }
 
 const mapStateToProps = (state) => ({

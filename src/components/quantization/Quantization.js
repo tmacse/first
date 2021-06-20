@@ -20,9 +20,10 @@ const changeTagsColor = (text) => {
 }
 
 const Quantization = (props) => {
+    const { get_quantization, list } = props
     useEffect(() => {
-        props.get_quantization()
-    }, [props])
+        get_quantization()
+    }, [get_quantization])
     return (
         <>
             <DetailHeader />
@@ -35,7 +36,7 @@ const Quantization = (props) => {
                         <TabPane tab={<h2>争创“四铁”先进单位</h2>} key="1">
                             <Table
                                 pagination={false}
-                                dataSource={props.list}
+                                dataSource={list}
                                 rowKey={(record) => record._id}
 
                             >

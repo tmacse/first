@@ -4,6 +4,13 @@ import { Row, Col } from 'antd'
 import { RightOutlined, PhoneOutlined, EnvironmentOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
+
+const FOOTLIKS = [
+    { url: '/curriculum/list', name: '强军阶梯' },
+    { url: '/dynamic/list', name: '强军动态' },
+    { url: '/movie/list', name: '强军文化' },
+    { url: '/mail/zw', name: '强军天平' },
+]
 const Footer = () => {
     return (
         <div className="footer">
@@ -18,31 +25,19 @@ const Footer = () => {
                     <div>
                         <span className="yellow" />
                         <span style={{ "fontSize": "16px", "fontWeight": "bold" }}>发现更多</span>
-                        <div className='foot-to-top'>
-                            <Link to='/curriculum/list'>
-                                <RightOutlined />
-                                <span className="padding-left">强军阶梯</span>
-                            </Link>
+                        {
+                            FOOTLIKS.map((item) => {
+                                return (
+                                    <div key={item.url} className='foot-to-top'>
+                                        <Link to={item.url}>
+                                            <RightOutlined />
+                                            <span className="padding-left">{item.name}</span>
+                                        </Link>
+                                    </div>
+                                )
+                            })
+                        }
 
-                        </div>
-                        <div className='foot-to-top'>
-                            <Link to='/dynamic/list'>
-                                <RightOutlined />
-                                <span className="padding-left">强军动态</span>
-                            </Link>
-                        </div>
-                        <div className='foot-to-top'>
-                            <Link to='/movie/list'>
-                                <RightOutlined />
-                                <span className="padding-left">强军文化</span>
-                            </Link>
-                        </div>
-                        <div className='foot-to-top'>
-                            <Link to='/mail/zw'>
-                                <RightOutlined />
-                                <span className="padding-left">强军天平</span>
-                            </Link>
-                        </div>
                     </div>
                 </Col>
                 <Col span={6}>

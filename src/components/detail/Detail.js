@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
 import { BASE_FILE_ADDRESS } from '../../consant/Consant'
 import DocumentTitle from 'react-document-title'
@@ -7,16 +7,8 @@ import DetailHeader from '../header/DetailHeader'
 import Footer from '../footer/Footer'
 import { Row, Col, Typography } from 'antd'
 import './detail.css'
-import { useEffect } from 'react';
 const { Title } = Typography;
 
-const MyTitle = (title) => {
-    return (
-        <Title level={3} style={{ textAlign: "center", marginTop: "40px" }}>
-            {title.title}
-        </Title>
-    )
-}
 
 const Detail = (props) => {
     const id = props.match.params._id
@@ -24,6 +16,7 @@ const Detail = (props) => {
     useEffect(() => {
         props.getDetail(id)
     }, [props, id])
+
     return (
         <DocumentTitle title={title}>
             <div>
@@ -79,3 +72,11 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detail);
+
+const MyTitle = (title) => {
+    return (
+        <Title level={3} style={{ textAlign: "center", marginTop: "40px" }}>
+            {title.title}
+        </Title>
+    )
+}

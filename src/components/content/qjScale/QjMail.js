@@ -1,43 +1,30 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Row, Col } from 'antd'
 import { MailOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
-export default class QjMail extends Component {
-    render() {
-        return (
-            <>
-                <Row>
-                    <Col className="station-master-mail" span={6}>
-                        <Link to='/mail/zz'>
+//可以放在constant下
+const MAIL = [
+    { classname: 'station-master-mail', link: '/mail/zz', name: '站长' },
+    { classname: 'commissioner-mail', link: '/mail/zw', name: '政委' },
+    { classname: 'officer-mail', link: '/mail/zr', name: '主任' },
+    { classname: 'discipline-mail', link: '/mail/jw', name: '纪委' },
+]
+const QjMail = () => {
+    return (
+        <Row>
+            {MAIL.map((item) => {
+                return (
+                    <Col key={item.name} className={item.classname} span={6}>
+                        <Link to={item.link}>
                             <MailOutlined />
-                            <span className="mail-text">站长信箱</span>
-                        </Link>
-
-                    </Col>
-                    <Col className="commissioner-mail" span={6}>
-                        <Link to='/mail/zw'>
-                            <MailOutlined />
-                            <span className="mail-text">政委信箱</span>
+                            <span className="mail-text">{item.name}信箱</span>
                         </Link>
                     </Col>
-                    <Col className="officer-mail" span={6}>
-
-                        <Link to='/mail/zr'>
-                            <MailOutlined />
-                            <span className="mail-text">主任信箱</span>
-                        </Link>
-
-                    </Col>
-                    <Col className="discipline-mail" span={6}>
-                        <Link to='/mail/jw'>
-                            <MailOutlined />
-                            <span className="mail-text">纪委信箱</span>
-                        </Link>
-
-                    </Col>
-                </Row>
-            </>
-        )
-    }
+                )
+            })}
+        </Row>
+    )
 }
+
+export default QjMail

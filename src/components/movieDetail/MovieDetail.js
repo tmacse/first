@@ -10,10 +10,6 @@ import Footer from '../footer/Footer'
 import { Player, BigPlayButton } from 'video-react'
 import { LikeTwoTone } from '@ant-design/icons';
 import './movie.css'
-// import Header from '../header/Header';
-
-// const path = require('path');
-
 
 class MovieDetail extends Component {
     constructor(props) {
