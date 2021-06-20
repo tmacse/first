@@ -1,4 +1,3 @@
-/// <reference types="react" />
 interface IndentProps {
     prefixCls: string;
     level: number;

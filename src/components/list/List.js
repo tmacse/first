@@ -21,13 +21,19 @@ class List extends Component {
         this.setState({ current: page, });
         this.props.getList(this.props.match.params.attr, page)
     };
+
+    // static getDerivedStateFromProps(props, state) {
+    //     this.props.getList(this.props.match.params.attr, this.state.current)
+    // }
+
     componentDidMount() {
         this.props.getList(this.props.match.params.attr, this.state.current)
     }
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     if (nextProps.name == this.props.name)
-    //         return false
-    // }
+    componentDidUpdate(nextProps) {
+        if (nextProps.location.pathname !== this.props.location.pathname) {
+            this.props.getList(nextProps.match.params.attr, 1)
+        }
+    }
 
     render() {
         const MovieList = ['movie', 'video', 'vlog', 'newsMovie']
@@ -116,13 +122,7 @@ class List extends Component {
             </DocumentTitle>
         )
     }
-    //通过此生命周期，拿到了更新后的attr值(实现了点击左边LeftNav的值实现了切换的效果)
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.location.pathname !== this.props.location.pathname) {
-            this.props.getList(nextProps.match.params.attr, 1)
-        }
 
-    }
 }
 //返回过来的状态
 const mapStateToProps = (state) => ({

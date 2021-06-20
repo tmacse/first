@@ -16,6 +16,6 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, {
         };
     };
     componentDidCatch(error: Error | null, info: object): void;
-    render(): {} | null | undefined;
+    render(): React.ReactNode;
 }
 export {};

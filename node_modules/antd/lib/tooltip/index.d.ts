@@ -40,5 +40,5 @@ export interface TooltipPropsWithTitle extends AbstractTooltipProps {
     overlay?: React.ReactNode | RenderFunction;
 }
 export declare type TooltipProps = TooltipPropsWithTitle | TooltipPropsWithOverlay;
-declare const Tooltip: React.ForwardRefExoticComponent<(TooltipPropsWithOverlay & React.RefAttributes<unknown>) | (TooltipPropsWithTitle & React.RefAttributes<unknown>)>;
+declare const Tooltip: React.ForwardRefExoticComponent<TooltipProps & React.RefAttributes<unknown>>;
 export default Tooltip;
