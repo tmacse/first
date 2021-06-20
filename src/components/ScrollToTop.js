@@ -11,4 +11,15 @@ class ScrollToTop extends Component {
         return this.props.children
     }
 }
+
+// function ScrollToTop(props) {
+//     console.log(props)
+//     useEffect((prevProps) => {
+//         if (props.location !== prevProps.location) {
+//             window.scrollTo(0, 0)
+//         }
+
+//     }, [props.location])
+//     return props.children
+// }
 export default withRouter(ScrollToTop);

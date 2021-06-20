@@ -16,7 +16,6 @@ const blockContent = `根据空军党委《关于庆祝中国共产党成立100�
 
 class HistoryPage extends Component {
     render() {
-        console.log('res', this.props.list)
         return (
             <Row>
                 <Col span={24}>

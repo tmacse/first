@@ -8,19 +8,13 @@ const ActivePage = () => {
     const [visible, setVisible] = React.useState(true);
     //设置定时5秒后消失
     useEffect(() => {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setVisible(false);
         }, 5000);
         return () => {
+            clearTimeout(timer)
         }
-    }, [])
-
-
-    const handleCancel = () => {
-        console.log('Clicked cancel button');
-        setVisible(false);
-    };
-
+    }, [visible])
     return (
         <>
             <Modal
@@ -29,7 +23,7 @@ const ActivePage = () => {
                 mask={true}
                 footer={null}
                 visible={visible}
-                onCancel={handleCancel}
+                onCancel={() => setVisible(false)}
                 closable={false}
             >
                 <Link to='/history'><img style={{ width: 800 }} src={History} alt='jpeg'></img></Link>
