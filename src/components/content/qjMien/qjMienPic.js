@@ -10,31 +10,26 @@ const QjMienPic = ({ list }) => {
         <div>
             <Row>
                 <Col span={15}>
-                    {list.slice(0, 1).map(
-                        (item) => {
-                            return (
-                                <PicTemp
-                                    key={item}
-                                    item={item}
-                                    style={{ width: 490, height: 318 }}
-                                />
-                            )
-                        }
-                    )
-                    }
+                    {list.slice(0, 1).map((item) => {
+                        return (
+                            <PicTemp
+                                key={item}
+                                item={item}
+                                style={{ width: 490, height: 318 }}
+                            />
+                        )
+                    })}
                 </Col>
                 <Col span={9}>
-                    {list.slice(1, 3).map(
-                        (item) => {
-                            return (
-                                <PicTemp
-                                    key={item}
-                                    item={item}
-                                    style={{ width: 278, height: 154, marginBottom: 10 }}
-                                />
-                            )
-                        }
-                    )}
+                    {list.slice(1, 3).map((item) => {
+                        return (
+                            <PicTemp
+                                key={item}
+                                item={item}
+                                style={{ width: 278, height: 154, marginBottom: 10 }}
+                            />
+                        )
+                    })}
                 </Col>
             </Row>
         </div>

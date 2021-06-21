@@ -13,7 +13,7 @@ export const get_history_detail = () => {
 				historylist: result.historylist,
 				minivlog: result.minivlog
 			}
-			console.log('拿到了数据', action.historylist)
+			console.log('拿到了数据', action.minivlog)
 			dispatch(action)
 		})
 	}
